@@ -62,7 +62,7 @@
   {
     "id": "base-de-datos-mysql",
     "name": "Curso de Base de Datos y SQL",
-    "url": "https://base-de-datos-mysql.netlify.app/",
+    "url": "https://adelvalle2010.github.io/cursoMYSQL/",
     "icon": "🗄️",
     "category": "Base de datos",
     "description": "Curso de 15 módulos con el caso BiblioUTU, para 2.º BT Informática.",
@@ -122,7 +122,7 @@
   {
     "id": "escaques-curso-ajedrez",
     "name": "Escaques · Curso de ajedrez",
-    "url": "https://escaques-curso-ajedrez.netlify.app/",
+    "url": "https://adelvalle2010.github.io/escaques/",
     "icon": "♞",
     "category": "Ajedrez",
     "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
@@ -152,7 +152,7 @@
   {
     "id": "normas-apa",
     "name": "Gestión de Normas APA 7",
-    "url": "https://normas-apa.netlify.app/",
+    "url": "https://adelvalle2010.github.io/normas-apa-7/",
     "icon": "📚",
     "category": "Herramientas",
     "description": "Citas, referencias y bibliografía en APA 7.ª edición.",
@@ -202,7 +202,7 @@
   {
     "id": "simulacion-dao-jdbc",
     "name": "Simulación DAO y JDBC",
-    "url": "https://adelvalle2010.github.io/simulacion-dao-jdbc/",
+    "url": "https://adelvalle2010.github.io/simulador-db/",
     "icon": "",
     "category": "Java Web",
     "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
