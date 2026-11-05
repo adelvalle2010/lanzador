@@ -90,6 +90,26 @@
     "createdAt": 1761440000014
   },
   {
+    "id": "curso-html-y-mas",
+    "name": "Curso de HTML y más",
+    "url": "https://curso-htm-ly-mas-xi.vercel.app/",
+    "icon": "",
+    "category": "Diseño Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1793845004335
+  },
+  {
+    "id": "curso-latex",
+    "name": "Curso de LaTeX · BiblioUTU",
+    "url": "https://adelvalle2010.github.io/curso-latex/",
+    "icon": "",
+    "category": "Herramientas",
+    "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
+    "favorite": false,
+    "createdAt": 1793846944335
+  },
+  {
     "id": "definicion-de-servlets",
     "name": "Definición de Servlets",
     "url": "https://definicion-de-servlets.netlify.app/",
@@ -140,6 +160,16 @@
     "createdAt": 1761440000013
   },
   {
+    "id": "inner-join",
+    "name": "INNER JOIN paso a paso",
+    "url": "https://adelvalle2010.github.io/inner-join/",
+    "icon": "",
+    "category": "Base de datos",
+    "description": "Lección interactiva: JOIN de 2 y 3 tablas, herencia Persona → Alumno, MER, MR, físico y SQL.",
+    "favorite": false,
+    "createdAt": 1793897892367
+  },
+  {
     "id": "introduccion-html-5",
     "name": "Introducción a HTML5",
     "url": "https://introduccion-html-5.netlify.app/",
@@ -180,6 +210,16 @@
     "createdAt": 1761440000002
   },
   {
+    "id": "simulacion-dao-jdbc",
+    "name": "Simulación DAO y JDBC",
+    "url": "https://adelvalle2010.github.io/simulador-db/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
+    "favorite": false,
+    "createdAt": 1793844943876
+  },
+  {
     "id": "simulador-http",
     "name": "Simulador interactivo HTTP",
     "url": "https://simulador-interactivo-protocolo-http.netlify.app/",
@@ -198,35 +238,5 @@
     "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
     "favorite": false,
     "createdAt": 1761440000019
-  },
-  {
-    "id": "simulacion-dao-jdbc",
-    "name": "Simulación DAO y JDBC",
-    "url": "https://adelvalle2010.github.io/simulador-db/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
-    "favorite": false,
-    "createdAt": 1793844943876
-  },
-  {
-    "id": "curso-html-y-mas",
-    "name": "Curso de HTML y más",
-    "url": "https://curso-htm-ly-mas-xi.vercel.app/",
-    "icon": "",
-    "category": "Diseño Web",
-    "description": "",
-    "favorite": false,
-    "createdAt": 1793845004335
-  },
-  {
-    "id": "curso-latex",
-    "name": "Curso de LaTeX · BiblioUTU",
-    "url": "https://adelvalle2010.github.io/curso-latex/",
-    "icon": "",
-    "category": "Herramientas",
-    "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
-    "favorite": false,
-    "createdAt": 1793846944335
   }
 ]
