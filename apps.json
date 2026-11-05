@@ -1,0 +1,222 @@
+[
+  {
+    "id": "actividad-3-jstl",
+    "name": "Actividad 3 · JSTL",
+    "url": "https://actividad-3-jstl.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000010
+  },
+  {
+    "id": "actividad-guiada-doget",
+    "name": "Actividad guiada doGet",
+    "url": "https://activiadadguiadadoget.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000009
+  },
+  {
+    "id": "aprende-ajedrez-desde-0",
+    "name": "Aprende ajedrez desde 0",
+    "url": "https://aprende-ajedrez-desde-0.netlify.app/",
+    "icon": "",
+    "category": "Ajedrez",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000004
+  },
+  {
+    "id": "arreglos-webquest-7",
+    "name": "WebQuest de arreglos 7",
+    "url": "https://arregloswebquest7.netlify.app/",
+    "icon": "",
+    "category": "Programación",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000017
+  },
+  {
+    "id": "arreglos-webquest-andres",
+    "name": "WebQuest de arreglos",
+    "url": "https://arregloswebquest-andres.netlify.app/",
+    "icon": "",
+    "category": "Programación",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000016
+  },
+  {
+    "id": "base-de-datos-conexion",
+    "name": "Conexión a Base de Datos",
+    "url": "https://base-de-datos-conexion.netlify.app/",
+    "icon": "",
+    "category": "Base de datos",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000001
+  },
+  {
+    "id": "base-de-datos-mysql",
+    "name": "Curso de Base de Datos y SQL",
+    "url": "https://base-de-datos-mysql.netlify.app/",
+    "icon": "🗄️",
+    "category": "Base de datos",
+    "description": "Curso de 15 módulos con el caso BiblioUTU, para 2.º BT Informática.",
+    "favorite": true,
+    "createdAt": 1761440000000
+  },
+  {
+    "id": "comunicacion-animada",
+    "name": "Comunicación animada",
+    "url": "https://comunicacion-animada.netlify.app/",
+    "icon": "",
+    "category": "",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000018
+  },
+  {
+    "id": "cuestionario-servlets",
+    "name": "Cuestionario adaptado Servlets",
+    "url": "https://cuestionario-adaptado-servl.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000014
+  },
+  {
+    "id": "definicion-de-servlets",
+    "name": "Definición de Servlets",
+    "url": "https://definicion-de-servlets.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000007
+  },
+  {
+    "id": "doget",
+    "name": "doGet",
+    "url": "https://doget.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000008
+  },
+  {
+    "id": "ejercicios-jsp",
+    "name": "Ejercicios JSP, Servlets, EL y JSTL",
+    "url": "https://ejercicios-jsp-servlets-el-jstl.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000012
+  },
+  {
+    "id": "escaques-curso-ajedrez",
+    "name": "Escaques · Curso de ajedrez",
+    "url": "https://escaques-curso-ajedrez.netlify.app/",
+    "icon": "♞",
+    "category": "Ajedrez",
+    "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
+    "favorite": true,
+    "createdAt": 1761440000003
+  },
+  {
+    "id": "historieta-ciclo-jsp",
+    "name": "Historieta: ciclo de vida JSP",
+    "url": "https://jsp-historieta-ciclo-de-vida-jsp.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000013
+  },
+  {
+    "id": "introduccion-html-5",
+    "name": "Introducción a HTML5",
+    "url": "https://introduccion-html-5.netlify.app/",
+    "icon": "",
+    "category": "Diseño Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000015
+  },
+  {
+    "id": "normas-apa",
+    "name": "Gestión de Normas APA 7",
+    "url": "https://normas-apa.netlify.app/",
+    "icon": "📚",
+    "category": "Herramientas",
+    "description": "Citas, referencias y bibliografía en APA 7.ª edición.",
+    "favorite": true,
+    "createdAt": 1761440000005
+  },
+  {
+    "id": "scriptlets-vs-el-jstl",
+    "name": "Scriptlets vs EL y JSTL",
+    "url": "https://scriptles-vs-el-jstl.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000011
+  },
+  {
+    "id": "sga-documentacion",
+    "name": "Documentación SGA",
+    "url": "https://sga-documentacion.netlify.app/",
+    "icon": "",
+    "category": "Base de datos",
+    "description": "Documentación del Sistema de Gestión Académica (Java Swing + MySQL).",
+    "favorite": false,
+    "createdAt": 1761440000002
+  },
+  {
+    "id": "simulador-http",
+    "name": "Simulador interactivo HTTP",
+    "url": "https://simulador-interactivo-protocolo-http.netlify.app/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "Simulador del protocolo HTTP: peticiones y respuestas.",
+    "favorite": true,
+    "createdAt": 1761440000006
+  },
+  {
+    "id": "ultrasonido",
+    "name": "Ultrasonido",
+    "url": "https://ultrasonido.netlify.app/",
+    "icon": "",
+    "category": "",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1761440000019
+  },
+  {
+    "id": "simulacion-dao-jdbc",
+    "name": "Simulación DAO y JDBC",
+    "url": "https://adelvalle2010.github.io/simulacion-dao-jdbc/",
+    "icon": "",
+    "category": "Java Web",
+    "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
+    "favorite": false,
+    "createdAt": 1793844943876
+  },
+  {
+    "id": "curso-html-y-mas",
+    "name": "Curso de HTML y más",
+    "url": "https://curso-htm-ly-mas-xi.vercel.app/",
+    "icon": "",
+    "category": "Diseño Web",
+    "description": "",
+    "favorite": false,
+    "createdAt": 1793845004335
+  }
+]
