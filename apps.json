@@ -238,5 +238,15 @@
     "description": "Lección interactiva: JOIN de 2 y 3 tablas, herencia Persona → Alumno, MER, MR, físico y SQL.",
     "favorite": false,
     "createdAt": 1793897892367
+  },
+  {
+    "id": "apuntes-java",
+    "name": "Apuntes completos de Java",
+    "url": "https://adelvalle2010.github.io/apuntes-java/",
+    "icon": "☕",
+    "category": "Programación",
+    "description": "19 láminas de Java, de lo básico a lo avanzado, con diagramas, pasos animados, glosario y autoevaluación. Programación I, 2.º BT.",
+    "favorite": false,
+    "createdAt": 1793982600236
   }
 ]

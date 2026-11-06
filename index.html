@@ -441,7 +441,11 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
   const KEY = "lz-apps-v1";
   const LS = { get() { try { const v = localStorage.getItem(KEY); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
                set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} },
-               clear() { try { localStorage.removeItem(KEY); } catch (e) {} } };
+               clear() { try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_DEL); } catch (e) {} } };
+  /* Apps que se borraron en este navegador, para no volver a sumarlas desde apps.json */
+  const KEY_DEL = "lz-borradas-v1";
+  const borradas = { get() { try { return JSON.parse(localStorage.getItem(KEY_DEL) || "[]"); } catch (e) { return []; } },
+                     add(id) { try { const b = borradas.get(); if (!b.includes(id)) { b.push(id); localStorage.setItem(KEY_DEL, JSON.stringify(b)); } } catch (e) {} } };
   let rows = [], listeners = [], dirty = false;
   const snap = () => ({ docs: rows.map(r => { const { id, ...d } = r; return { id, exists: true, data: () => d }; }) });
   const emit = () => listeners.forEach(cb => cb(snap()));
@@ -454,7 +458,7 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
     }),
     doc: path => { const id = path.split("/")[1]; return {
       update: async d => { const r = rows.find(x => x.id === id); if (r) { Object.assign(r, d); if (Object.keys(d).length === 1 && "lastOpened" in d) { LS.set(rows); emit(); } else commit(); } },
-      delete: async () => { rows = rows.filter(x => x.id !== id); commit(); }
+      delete: async () => { rows = rows.filter(x => x.id !== id); borradas.add(id); commit(); }
     }; }
   };
   async function fromFile() {
@@ -478,8 +482,15 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
   render();
   (async () => {
     const saved = LS.get();
-    const file = saved ? null : await fromFile();
-    rows = saved || file || [];
+    const file = await fromFile();
+    let base = saved || file || [];
+    if (saved && file) {
+      // Suma las apps nuevas de apps.json que este navegador todavía no tiene
+      const tengo = new Set(saved.map(r => r.id)), fuera = new Set(borradas.get());
+      const nuevas = file.filter(r => !tengo.has(r.id) && !fuera.has(r.id));
+      if (nuevas.length) { base = saved.concat(nuevas); LS.set(base); }
+    }
+    rows = base;
     S.db = localDb; S.canEdit = true; $("#add").hidden = false;
     localDb.collection("apps").onSnapshot(s => {
       S.apps = s.docs.map(d => ({ id: d.id, ...d.data() }));
