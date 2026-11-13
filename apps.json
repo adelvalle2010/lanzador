@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:47:36.905Z",
+  "updated": "2026-11-13T01:48:37.032Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -487,12 +487,23 @@
     },
     {
       "id": "mwebhc9mbabc",
-      "createdAt": 1794534456154,
       "name": "Final code autoevaluacionrubrica",
       "url": "https://final-code-autoevaluacionrubrica.vercel.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Recurso de programación en Java.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534456154
+    },
+    {
+      "id": "mwebimnajd8j",
+      "createdAt": 1794534516262,
+      "name": "Content 1 seven",
+      "url": "https://content-1-seven.vercel.app/",
+      "icon": "",
+      "category": "TO Diseño Web",
+      "description": "Recurso de TO Diseño Web: Content 1 seven.",
       "image": "",
       "favorite": false
     }
