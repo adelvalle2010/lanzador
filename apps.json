@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:44:57.680Z",
+  "updated": "2026-11-13T01:45:15.208Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -454,9 +454,20 @@
     },
     {
       "id": "mwebdxm9935g",
-      "createdAt": 1794534297201,
       "name": "Actividad cilco de vida",
       "url": "https://actividad-cilco-de-vida.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Actividad de programación en Java.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534297201
+    },
+    {
+      "id": "mwebeb4yi549",
+      "createdAt": 1794534314722,
+      "name": "Actividad ciclo de vida",
+      "url": "https://actividad-ciclo-de-vida.netlify.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Actividad de programación en Java.",
