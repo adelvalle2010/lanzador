@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:40:36.944Z",
+  "updated": "2026-11-13T01:41:16.011Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -366,12 +366,23 @@
     },
     {
       "id": "mweb8cgktyrc",
-      "createdAt": 1794534036500,
       "name": "Escrito jsp v2",
       "url": "https://escrito-jsp-v2.netlify.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Recurso sobre páginas JSP en Java Web.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534036500
+    },
+    {
+      "id": "mweb9681edkf",
+      "createdAt": 1794534075073,
+      "name": "Ejer doget catalogo productos",
+      "url": "https://ejer-doget-catalogo-productos.netlify.app/",
+      "icon": "",
+      "category": "",
+      "description": "Recurso sobre los métodos doGet y doPost de un Servlet.",
       "image": "",
       "favorite": false
     }
