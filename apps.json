@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:35:03.255Z",
+  "updated": "2026-11-13T01:36:41.218Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -308,6 +308,17 @@
       "image": "",
       "favorite": false,
       "createdAt": 1793982600236
+    },
+    {
+      "id": "mweb3ad75396",
+      "createdAt": 1794533800507,
+      "name": "Wiki - Github",
+      "url": "https://github.com/adelvalle2010/conexion-base-de-datos/wiki/",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "Wiki Curso Completo de Base de Datos - Recurso sobre cómo conectar una aplicación a una base de datos.",
+      "image": "",
+      "favorite": true
     }
   ]
 }
