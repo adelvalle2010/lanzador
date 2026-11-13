@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:41:16.011Z",
+  "updated": "2026-11-13T01:41:47.040Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -377,14 +377,25 @@
     },
     {
       "id": "mweb9681edkf",
-      "createdAt": 1794534075073,
       "name": "Ejer doget catalogo productos",
       "url": "https://ejer-doget-catalogo-productos.netlify.app/",
       "icon": "",
       "category": "",
       "description": "Recurso sobre los métodos doGet y doPost de un Servlet.",
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "createdAt": 1794534075073
+    },
+    {
+      "id": "mweb9uihg8f6",
+      "createdAt": 1794534106553,
+      "name": "Emulador consulta db",
+      "url": "https://emulador-consulta-db.netlify.app/simulacion_dao_y_jdbc.html",
+      "icon": "",
+      "category": "",
+      "description": "Simulador interactivo sobre el patrón DAO y el acceso a datos con JDBC.",
+      "image": "",
+      "favorite": true
     }
   ]
 }
