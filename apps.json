@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:46:40.890Z",
+  "updated": "2026-11-13T01:47:36.905Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -476,9 +476,20 @@
     },
     {
       "id": "mwebg512ua9n",
-      "createdAt": 1794534400118,
       "name": "Java journey beta",
       "url": "https://java-journey-beta.vercel.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Recurso de programación en Java.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534400118
+    },
+    {
+      "id": "mwebhc9mbabc",
+      "createdAt": 1794534456154,
+      "name": "Final code autoevaluacionrubrica",
+      "url": "https://final-code-autoevaluacionrubrica.vercel.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Recurso de programación en Java.",
