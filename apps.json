@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:58:55.135Z",
+  "updated": "2026-11-13T01:59:42.012Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -536,7 +536,7 @@
       "icon": "",
       "category": "Diseño Web",
       "description": "Curso sobre JSP con Expression Language y etiquetas JSTL.",
-      "image": "",
+      "image": "https://static.wixstatic.com/media/0d04aa_042267041d50470281e3c628c7373130~mv2.png/v1/fill/w_588,h_366,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0d04aa_042267041d50470281e3c628c7373130~mv2.png",
       "favorite": true,
       "createdAt": 1794534957818
     },
@@ -553,14 +553,14 @@
     },
     {
       "id": "mwebvvi24228",
-      "createdAt": 1794535134266,
       "name": "Diseño de Base de Datos.",
       "url": "https://github.com/adelvalle2010/curso-disenio-base-de-datos",
       "icon": "",
       "category": "Base de datos",
       "description": "Curso sobre bases de datos y consultas SQL.",
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "createdAt": 1794535134266
     }
   ]
 }
