@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:59:42.012Z",
+  "updated": "2026-11-13T02:01:19.529Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -520,7 +520,7 @@
     },
     {
       "id": "mweblm9w3a2u",
-      "name": "Material programacion avanzada libr",
+      "name": "Libreta de Clase",
       "url": "https://material-programacion-avanzada-libr.vercel.app/",
       "icon": "",
       "category": "Herramientas",
