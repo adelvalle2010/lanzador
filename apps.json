@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:50:56.477Z",
+  "updated": "2026-11-13T01:55:58.556Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -520,12 +520,23 @@
     },
     {
       "id": "mweblm9w3a2u",
-      "createdAt": 1794534655749,
       "name": "Material programacion avanzada libr",
       "url": "https://material-programacion-avanzada-libr.vercel.app/",
       "icon": "",
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: Material programacion avanzada libr.",
+      "image": "",
+      "favorite": true,
+      "createdAt": 1794534655749
+    },
+    {
+      "id": "mwebs3cq2jo5",
+      "createdAt": 1794534957818,
+      "name": "Curso htm , css , js , jstl",
+      "url": "https://curso-htm-ly-mas-xi.vercel.app/",
+      "icon": "",
+      "category": "Diseño Web",
+      "description": "Curso sobre JSP con Expression Language y etiquetas JSTL.",
       "image": "",
       "favorite": true
     }
