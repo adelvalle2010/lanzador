@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:42:49.757Z",
+  "updated": "2026-11-13T01:43:26.237Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -407,6 +407,17 @@
       "image": "",
       "favorite": true,
       "createdAt": 1794534141394
+    },
+    {
+      "id": "mwebbyuvzkhy",
+      "createdAt": 1794534205495,
+      "name": "Escrito jsp",
+      "url": "https://escrito-jsp.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Recurso sobre páginas JSP en Java Web.",
+      "image": "",
+      "favorite": false
     }
   ]
 }
