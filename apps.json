@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:34:31.412Z",
+  "updated": "2026-11-13T01:35:03.255Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -281,7 +281,7 @@
       "name": "Curso de LaTeX · BiblioUTU",
       "url": "https://adelvalle2010.github.io/curso-latex/",
       "icon": "",
-      "category": "Herramientas",
+      "category": "Cursos",
       "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
       "image": "",
       "favorite": false,
