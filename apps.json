@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:38:49.435Z",
+  "updated": "2026-11-13T01:39:08.248Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -333,12 +333,23 @@
     },
     {
       "id": "mweb61afr5b9",
-      "createdAt": 1794533928711,
       "name": "pliego-pdf.netlify.app",
       "url": "https://pliego-pdf.netlify.app/",
       "icon": "",
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: pliego-pdf.netlify.app.",
+      "image": "",
+      "favorite": true,
+      "createdAt": 1794533928711
+    },
+    {
+      "id": "mweb6g0ijtm2",
+      "createdAt": 1794533947794,
+      "name": "UáipoNem 2.6.0 — Extensión para Firefox, Edge y Chrome | JML Software",
+      "url": "https://jmlsoftware.com.uy/uaiponem/#funciones",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Herramienta de Herramientas: UáipoNem 2.6.0 — Extensión para Firefox, Edge y Chrome | JML Software.",
       "image": "",
       "favorite": true
     }
