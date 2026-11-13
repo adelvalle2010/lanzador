@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T02:15:59.533Z",
+  "updated": "2026-11-13T02:16:01.821Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -526,7 +526,7 @@
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: Material programacion avanzada libr.",
       "image": "",
-      "favorite": true,
+      "favorite": false,
       "createdAt": 1794534655749
     },
     {
