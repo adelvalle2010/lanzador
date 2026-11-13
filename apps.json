@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:38:08.385Z",
+  "updated": "2026-11-13T01:38:49.435Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -322,14 +322,25 @@
     },
     {
       "id": "mweb55li5kiz",
-      "createdAt": 1794533887638,
       "name": "Notas de Base de Datos - Github",
       "url": "https://github.com/rb-one/Notas-fundamentos-bases-de-datos/blob/master/Notas/notas.md",
       "icon": "",
       "category": "Base de datos",
       "description": "Recurso sobre bases de datos y consultas SQL.",
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "createdAt": 1794533887638
+    },
+    {
+      "id": "mweb61afr5b9",
+      "createdAt": 1794533928711,
+      "name": "pliego-pdf.netlify.app",
+      "url": "https://pliego-pdf.netlify.app/",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Herramienta de Herramientas: pliego-pdf.netlify.app.",
+      "image": "",
+      "favorite": true
     }
   ]
 }
