@@ -1,252 +1,313 @@
-[
-  {
-    "id": "actividad-3-jstl",
-    "name": "Actividad 3 · JSTL",
-    "url": "https://actividad-3-jstl.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000010
+{
+  "version": 2,
+  "updated": "2026-11-13T01:18:58+00:00",
+  "categories": {
+    "Java Web": {
+      "color": 1,
+      "icon": "☕",
+      "order": 0
+    },
+    "Base de datos": {
+      "color": 4,
+      "icon": "🗄️",
+      "order": 1
+    },
+    "Programación": {
+      "color": 5,
+      "icon": "💻",
+      "order": 2
+    },
+    "Diseño Web": {
+      "color": 3,
+      "icon": "🎨",
+      "order": 3
+    },
+    "Herramientas": {
+      "color": 2,
+      "icon": "🧰",
+      "order": 4
+    },
+    "Ajedrez": {
+      "color": 6,
+      "icon": "♞",
+      "order": 5
+    }
   },
-  {
-    "id": "actividad-guiada-doget",
-    "name": "Actividad guiada doGet",
-    "url": "https://activiadadguiadadoget.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000009
-  },
-  {
-    "id": "aprende-ajedrez-desde-0",
-    "name": "Aprende ajedrez desde 0",
-    "url": "https://aprende-ajedrez-desde-0.netlify.app/",
-    "icon": "",
-    "category": "Ajedrez",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000004
-  },
-  {
-    "id": "arreglos-webquest-7",
-    "name": "WebQuest de arreglos 7",
-    "url": "https://arregloswebquest7.netlify.app/",
-    "icon": "",
-    "category": "Programación",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000017
-  },
-  {
-    "id": "arreglos-webquest-andres",
-    "name": "WebQuest de arreglos",
-    "url": "https://arregloswebquest-andres.netlify.app/",
-    "icon": "",
-    "category": "Programación",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000016
-  },
-  {
-    "id": "base-de-datos-conexion",
-    "name": "Conexión a Base de Datos",
-    "url": "https://adelvalle2010.github.io/conexion-base-de-datos/",
-    "icon": "",
-    "category": "Base de datos",
-    "description": "Cómo una aplicación web Java se conecta a MySQL: del formulario a la tabla.",
-    "favorite": false,
-    "createdAt": 1761440000001
-  },
-  {
-    "id": "base-de-datos-mysql",
-    "name": "BiblioUTU · Curso de Base de Datos y MySQL",
-    "url": "https://adelvalle2010.github.io/cursoMYSQL/",
-    "icon": "🗄️",
-    "category": "Base de datos",
-    "description": "Curso de 15 módulos con el caso BiblioUTU, para 2.º BT Informática.",
-    "favorite": true,
-    "createdAt": 1761440000000
-  },
-  {
-    "id": "comunicacion-animada",
-    "name": "Comunicación animada",
-    "url": "https://comunicacion-animada.netlify.app/",
-    "icon": "",
-    "category": "",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000018
-  },
-  {
-    "id": "cuestionario-servlets",
-    "name": "Cuestionario adaptado Servlets",
-    "url": "https://cuestionario-adaptado-servl.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000014
-  },
-  {
-    "id": "definicion-de-servlets",
-    "name": "Definición de Servlets",
-    "url": "https://definicion-de-servlets.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000007
-  },
-  {
-    "id": "doget",
-    "name": "doGet",
-    "url": "https://doget.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000008
-  },
-  {
-    "id": "ejercicios-jsp",
-    "name": "Ejercicios JSP, Servlets, EL y JSTL",
-    "url": "https://ejercicios-jsp-servlets-el-jstl.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000012
-  },
-  {
-    "id": "escaques-curso-ajedrez",
-    "name": "Escaques · Curso de ajedrez",
-    "url": "https://adelvalle2010.github.io/escaques/",
-    "icon": "♞",
-    "category": "Ajedrez",
-    "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
-    "favorite": true,
-    "createdAt": 1761440000003
-  },
-  {
-    "id": "historieta-ciclo-jsp",
-    "name": "Historieta: ciclo de vida JSP",
-    "url": "https://jsp-historieta-ciclo-de-vida-jsp.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000013
-  },
-  {
-    "id": "introduccion-html-5",
-    "name": "Introducción a HTML5",
-    "url": "https://introduccion-html-5.netlify.app/",
-    "icon": "",
-    "category": "Diseño Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000015
-  },
-  {
-    "id": "normas-apa",
-    "name": "Gestión de Normas APA 7",
-    "url": "https://adelvalle2010.github.io/normas-apa-7/",
-    "icon": "📚",
-    "category": "Herramientas",
-    "description": "Citas, referencias y bibliografía en APA 7.ª edición.",
-    "favorite": true,
-    "createdAt": 1761440000005
-  },
-  {
-    "id": "scriptlets-vs-el-jstl",
-    "name": "Scriptlets vs EL y JSTL",
-    "url": "https://scriptles-vs-el-jstl.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000011
-  },
-  {
-    "id": "sga-documentacion",
-    "name": "Documentación SGA",
-    "url": "https://sga-documentacion.netlify.app/",
-    "icon": "",
-    "category": "Base de datos",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Documentación del Sistema de Gestión Académica (Java Swing + MySQL).",
-    "favorite": false,
-    "createdAt": 1761440000002
-  },
-  {
-    "id": "simulador-http",
-    "name": "Simulador interactivo HTTP",
-    "url": "https://simulador-interactivo-protocolo-http.netlify.app/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Simulador del protocolo HTTP: peticiones y respuestas.",
-    "favorite": true,
-    "createdAt": 1761440000006
-  },
-  {
-    "id": "ultrasonido",
-    "name": "Ultrasonido",
-    "url": "https://ultrasonido.netlify.app/",
-    "icon": "",
-    "category": "",
-    "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
-    "favorite": false,
-    "createdAt": 1761440000019
-  },
-  {
-    "id": "simulacion-dao-jdbc",
-    "name": "Simulación DAO y JDBC",
-    "url": "https://adelvalle2010.github.io/simulador-db/",
-    "icon": "",
-    "category": "Java Web",
-    "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
-    "favorite": false,
-    "createdAt": 1793844943876
-  },
-  {
-    "id": "curso-html-y-mas",
-    "name": "Curso de HTML y más",
-    "url": "https://curso-htm-ly-mas-xi.vercel.app/",
-    "icon": "",
-    "category": "Diseño Web",
-    "description": "",
-    "favorite": false,
-    "createdAt": 1793845004335
-  },
-  {
-    "id": "curso-latex",
-    "name": "Curso de LaTeX · BiblioUTU",
-    "url": "https://adelvalle2010.github.io/curso-latex/",
-    "icon": "",
-    "category": "Herramientas",
-    "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
-    "favorite": false,
-    "createdAt": 1793846944335
-  },
-  {
-    "id": "inner-join",
-    "name": "INNER JOIN paso a paso",
-    "url": "https://adelvalle2010.github.io/inner-join/",
-    "icon": "",
-    "category": "Base de datos",
-    "description": "Lección interactiva: JOIN de 2 y 3 tablas, herencia Persona → Alumno, MER, MR, físico y SQL.",
-    "favorite": false,
-    "createdAt": 1793897892367
-  },
-  {
-    "id": "apuntes-java",
-    "name": "Apuntes completos de Java",
-    "url": "https://adelvalle2010.github.io/apuntes-java/",
-    "icon": "☕",
-    "category": "Programación",
-    "description": "19 láminas de Java, de lo básico a lo avanzado, con diagramas, pasos animados, glosario y autoevaluación. Programación I, 2.º BT.",
-    "favorite": false,
-    "createdAt": 1793982600236
-  }
-]
+  "apps": [
+    {
+      "id": "actividad-3-jstl",
+      "name": "Actividad 3 · JSTL",
+      "url": "https://actividad-3-jstl.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000010,
+      "image": ""
+    },
+    {
+      "id": "actividad-guiada-doget",
+      "name": "Actividad guiada doGet",
+      "url": "https://activiadadguiadadoget.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000009,
+      "image": ""
+    },
+    {
+      "id": "aprende-ajedrez-desde-0",
+      "name": "Aprende ajedrez desde 0",
+      "url": "https://aprende-ajedrez-desde-0.netlify.app/",
+      "icon": "",
+      "category": "Ajedrez",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000004,
+      "image": ""
+    },
+    {
+      "id": "arreglos-webquest-7",
+      "name": "WebQuest de arreglos 7",
+      "url": "https://arregloswebquest7.netlify.app/",
+      "icon": "",
+      "category": "Programación",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000017,
+      "image": ""
+    },
+    {
+      "id": "arreglos-webquest-andres",
+      "name": "WebQuest de arreglos",
+      "url": "https://arregloswebquest-andres.netlify.app/",
+      "icon": "",
+      "category": "Programación",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000016,
+      "image": ""
+    },
+    {
+      "id": "base-de-datos-conexion",
+      "name": "Conexión a Base de Datos",
+      "url": "https://adelvalle2010.github.io/conexion-base-de-datos/",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "Cómo una aplicación web Java se conecta a MySQL: del formulario a la tabla.",
+      "favorite": false,
+      "createdAt": 1761440000001,
+      "image": ""
+    },
+    {
+      "id": "base-de-datos-mysql",
+      "name": "BiblioUTU · Curso de Base de Datos y MySQL",
+      "url": "https://adelvalle2010.github.io/cursoMYSQL/",
+      "icon": "🗄️",
+      "category": "Base de datos",
+      "description": "Curso de 15 módulos con el caso BiblioUTU, para 2.º BT Informática.",
+      "favorite": true,
+      "createdAt": 1761440000000,
+      "image": ""
+    },
+    {
+      "id": "comunicacion-animada",
+      "name": "Comunicación animada",
+      "url": "https://comunicacion-animada.netlify.app/",
+      "icon": "",
+      "category": "",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000018,
+      "image": ""
+    },
+    {
+      "id": "cuestionario-servlets",
+      "name": "Cuestionario adaptado Servlets",
+      "url": "https://cuestionario-adaptado-servl.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000014,
+      "image": ""
+    },
+    {
+      "id": "definicion-de-servlets",
+      "name": "Definición de Servlets",
+      "url": "https://definicion-de-servlets.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000007,
+      "image": ""
+    },
+    {
+      "id": "doget",
+      "name": "doGet",
+      "url": "https://doget.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000008,
+      "image": ""
+    },
+    {
+      "id": "ejercicios-jsp",
+      "name": "Ejercicios JSP, Servlets, EL y JSTL",
+      "url": "https://ejercicios-jsp-servlets-el-jstl.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000012,
+      "image": ""
+    },
+    {
+      "id": "escaques-curso-ajedrez",
+      "name": "Escaques · Curso de ajedrez",
+      "url": "https://adelvalle2010.github.io/escaques/",
+      "icon": "♞",
+      "category": "Ajedrez",
+      "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
+      "favorite": true,
+      "createdAt": 1761440000003,
+      "image": ""
+    },
+    {
+      "id": "historieta-ciclo-jsp",
+      "name": "Historieta: ciclo de vida JSP",
+      "url": "https://jsp-historieta-ciclo-de-vida-jsp.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000013,
+      "image": ""
+    },
+    {
+      "id": "introduccion-html-5",
+      "name": "Introducción a HTML5",
+      "url": "https://introduccion-html-5.netlify.app/",
+      "icon": "",
+      "category": "Diseño Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000015,
+      "image": ""
+    },
+    {
+      "id": "normas-apa",
+      "name": "Gestión de Normas APA 7",
+      "url": "https://adelvalle2010.github.io/normas-apa-7/",
+      "icon": "📚",
+      "category": "Herramientas",
+      "description": "Citas, referencias y bibliografía en APA 7.ª edición.",
+      "favorite": true,
+      "createdAt": 1761440000005,
+      "image": ""
+    },
+    {
+      "id": "scriptlets-vs-el-jstl",
+      "name": "Scriptlets vs EL y JSTL",
+      "url": "https://scriptles-vs-el-jstl.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000011,
+      "image": ""
+    },
+    {
+      "id": "sga-documentacion",
+      "name": "Documentación SGA",
+      "url": "https://sga-documentacion.netlify.app/",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Documentación del Sistema de Gestión Académica (Java Swing + MySQL).",
+      "favorite": false,
+      "createdAt": 1761440000002,
+      "image": ""
+    },
+    {
+      "id": "simulador-http",
+      "name": "Simulador interactivo HTTP",
+      "url": "https://simulador-interactivo-protocolo-http.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Simulador del protocolo HTTP: peticiones y respuestas.",
+      "favorite": true,
+      "createdAt": 1761440000006,
+      "image": ""
+    },
+    {
+      "id": "ultrasonido",
+      "name": "Ultrasonido",
+      "url": "https://ultrasonido.netlify.app/",
+      "icon": "",
+      "category": "",
+      "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "favorite": false,
+      "createdAt": 1761440000019,
+      "image": ""
+    },
+    {
+      "id": "simulacion-dao-jdbc",
+      "name": "Simulación DAO y JDBC",
+      "url": "https://adelvalle2010.github.io/simulador-db/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
+      "favorite": false,
+      "createdAt": 1793844943876,
+      "image": ""
+    },
+    {
+      "id": "curso-html-y-mas",
+      "name": "Curso de HTML y más",
+      "url": "https://curso-htm-ly-mas-xi.vercel.app/",
+      "icon": "",
+      "category": "Diseño Web",
+      "description": "",
+      "favorite": false,
+      "createdAt": 1793845004335,
+      "image": ""
+    },
+    {
+      "id": "curso-latex",
+      "name": "Curso de LaTeX · BiblioUTU",
+      "url": "https://adelvalle2010.github.io/curso-latex/",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
+      "favorite": false,
+      "createdAt": 1793846944335,
+      "image": ""
+    },
+    {
+      "id": "inner-join",
+      "name": "INNER JOIN paso a paso",
+      "url": "https://adelvalle2010.github.io/inner-join/",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "Lección interactiva: JOIN de 2 y 3 tablas, herencia Persona → Alumno, MER, MR, físico y SQL.",
+      "favorite": false,
+      "createdAt": 1793897892367,
+      "image": ""
+    },
+    {
+      "id": "apuntes-java",
+      "name": "Apuntes completos de Java",
+      "url": "https://adelvalle2010.github.io/apuntes-java/",
+      "icon": "☕",
+      "category": "Programación",
+      "description": "19 láminas de Java, de lo básico a lo avanzado, con diagramas, pasos animados, glosario y autoevaluación. Programación I, 2.º BT.",
+      "favorite": false,
+      "createdAt": 1793982600236,
+      "image": ""
+    }
+  ]
+}

@@ -4,46 +4,90 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Lanzadera</title>
-<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="description" content="Hub de las aplicaciones web del Prof. Andrés del Valle: cursos, simuladores, actividades y herramientas en un solo lugar.">
+<link rel="canonical" href="https://adelvalle2010.github.io/lanzador/">
+<meta property="og:title" content="Lanzadera · Prof. Andrés del Valle">
+<meta property="og:description" content="Cursos, simuladores, actividades y herramientas en un solo lugar.">
+<meta property="og:url" content="https://adelvalle2010.github.io/lanzador/">
+<meta property="og:image" content="https://adelvalle2010.github.io/lanzador/icon-512.png">
+<meta name="theme-color" content="#EDF0F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1220" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: barra de mando arriba (buscar + nueva), filtros por categoría, luego secciones con grilla de tarjetas-lanzador */
+/* Layout: encabezado con estado de guardado, barra de mando (buscar + nueva), filtros por categoría, secciones con grilla de tarjetas con portada */
 :root{
   --bg:#EDF0F5; --surface:#FFFFFF; --surface-2:#F6F8FB; --ink:#131A28; --muted:#5A6478; --line:#D7DCE6;
-  --accent:#2448E8; --accent-ink:#FFFFFF; --star:#E0A100; --danger:#C8322B;
+  --accent:#2448E8; --accent-ink:#FFFFFF; --star:#E0A100; --danger:#C8322B; --ok:#0F8A6B; --warn:#B76E00;
   --c1:#2448E8; --c2:#0F8A6B; --c3:#C2410C; --c4:#8B3FD1; --c5:#B8326A; --c6:#0E7490;
   --shadow:0 1px 2px rgba(19,26,40,.06),0 6px 18px -8px rgba(19,26,40,.18);
   --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --f-body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --r:14px;
+  --r:14px; color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0D1220; --surface:#151C2C; --surface-2:#1B2336; --ink:#E7EBF3; --muted:#97A1B5; --line:#283149;
-  --accent:#7D93FF; --accent-ink:#0D1220; --star:#F5C443; --danger:#FF7A70;
+  --accent:#7D93FF; --accent-ink:#0D1220; --star:#F5C443; --danger:#FF7A70; --ok:#3CCB9F; --warn:#F5B443;
   --c1:#7D93FF; --c2:#3CCB9F; --c3:#FF9A62; --c4:#BE8BFF; --c5:#FF7FAE; --c6:#4CC6E0;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -10px rgba(0,0,0,.6); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0D1220; --surface:#151C2C; --surface-2:#1B2336; --ink:#E7EBF3; --muted:#97A1B5; --line:#283149;
-  --accent:#7D93FF; --accent-ink:#0D1220; --star:#F5C443; --danger:#FF7A70;
+  --accent:#7D93FF; --accent-ink:#0D1220; --star:#F5C443; --danger:#FF7A70; --ok:#3CCB9F; --warn:#F5B443;
   --c1:#7D93FF; --c2:#3CCB9F; --c3:#FF9A62; --c4:#BE8BFF; --c5:#FF7FAE; --c6:#4CC6E0;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 22px -10px rgba(0,0,0,.6); color-scheme:dark}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+[hidden]{display:none!important}
+img{max-width:100%}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(28px + env(safe-area-inset-top,0px)) calc(64px + env(safe-area-inset-bottom,0px))}
 button,input,textarea,select{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:inherit}
 
 /* Encabezado */
 .top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 24px;margin-bottom:22px}
-.brand h1{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,5vw,44px);letter-spacing:-.025em;line-height:1;margin:0;text-wrap:balance}
+.brand h1{font-family:var(--f-display);font-weight:800;font-size:clamp(32px,5vw,46px);letter-spacing:-.025em;line-height:1;margin:0}
 .brand h1 span{color:var(--accent)}
-.stat{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:8px;font-variant-numeric:tabular-nums}
+.stat{font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:8px;font-variant-numeric:tabular-nums;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.stat a{text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--muted) 60%,transparent)}
+.stat a:hover{color:var(--accent);border-color:var(--accent)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:13px;cursor:pointer;white-space:nowrap}
+.pill .d{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.pill[data-s="ok"] .d{background:var(--ok)}
+.pill[data-s="saving"] .d{background:var(--warn);animation:pulse 1s infinite}
+.pill[data-s="error"]{border-color:color-mix(in srgb,var(--danger) 50%,var(--line));color:var(--danger)}
+.pill[data-s="error"] .d{background:var(--danger)}
+@keyframes pulse{50%{opacity:.3}}
+
+.btn{height:46px;border:0;border-radius:12px;padding:0 18px;cursor:pointer;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;text-decoration:none}
+.btn.sm{height:38px;padding:0 13px;font-weight:400;font-size:14px}
+.btn.sq{width:38px;padding:0}
+.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-primary:disabled{opacity:.6;cursor:progress}
+.btn-ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.btn-danger{background:transparent;border:1px solid color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
+.btn-danger.armed{background:var(--danger);color:#fff;border-color:var(--danger)}
+
+/* Menú "Más" */
+.menu{position:relative}
+.menu summary{list-style:none}
+.menu summary::-webkit-details-marker{display:none}
+.menu-pop{position:absolute;right:0;top:calc(100% + 6px);z-index:20;min-width:240px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -18px rgba(0,0,0,.35);padding:6px;display:grid}
+.menu-pop button{display:flex;align-items:center;gap:10px;text-align:left;border:0;background:transparent;padding:10px 12px;border-radius:9px;cursor:pointer;font-size:14px}
+.menu-pop button:hover{background:var(--surface-2)}
+.menu-pop button small{display:block;color:var(--muted);font-size:12px}
+.menu-pop hr{border:0;border-top:1px solid var(--line);margin:4px 6px}
 
 /* Barra de mando */
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding-block:10px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
@@ -56,14 +100,8 @@ button,input,textarea,select{font:inherit;color:inherit}
 .seg{display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
 .seg button{height:44px;width:44px;border:0;background:transparent;cursor:pointer;color:var(--muted);display:grid;place-items:center}
 .seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--ink)}
-.btn{height:46px;border:0;border-radius:12px;padding:0 18px;cursor:pointer;font-weight:700;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
-.btn-primary{background:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow)}
-.btn-primary:hover{filter:brightness(1.08)}
-.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
-.btn-danger{background:transparent;border:1px solid color-mix(in srgb,var(--danger) 50%,transparent);color:var(--danger)}
-.btn-danger.armed{background:var(--danger);color:#fff;border-color:var(--danger)}
 
-/* Chips de categoría */
+/* Chips */
 .chips{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 14px;scrollbar-width:thin}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px}
 .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--c)}
@@ -78,27 +116,45 @@ button,input,textarea,select{font:inherit;color:inherit}
 .sec-head h2 .bar-c{width:14px;height:14px;border-radius:4px;background:var(--c)}
 .sec-head .n{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.list .grid{grid-template-columns:1fr;gap:6px}
+/* Recientes */
+.recent{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.rc{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--line);background:var(--surface);border-radius:12px;text-decoration:none;max-width:280px}
+.rc:hover{border-color:color-mix(in srgb,var(--c) 55%,var(--line))}
+.rc .tile{width:34px;height:34px;font-size:14px;border-radius:9px}
+.rc .tile.emoji{font-size:18px}
+.rc b{font-size:14px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc small{font-family:var(--f-mono);font-size:11px;color:var(--muted)}
+.rc span{min-width:0}
 
+/* Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.list .grid{grid-template-columns:1fr;gap:6px}
 .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;min-width:0}
 .card:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--c) 55%,var(--line));box-shadow:var(--shadow)}
-.card a{display:flex;gap:14px;padding:16px 16px 16px;color:inherit;text-decoration:none;border-radius:var(--r);min-width:0;height:100%}
+.card > a{display:flex;flex-direction:column;color:inherit;text-decoration:none;border-radius:var(--r);min-width:0;height:100%}
+.crow{display:flex;gap:14px;padding:14px 16px 16px;min-width:0}
+.cover{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;border-radius:calc(var(--r) - 1px) calc(var(--r) - 1px) 0 0;border-bottom:1px solid var(--line);background:linear-gradient(140deg,color-mix(in srgb,var(--c) 26%,var(--surface)),color-mix(in srgb,var(--c) 6%,var(--surface)))}
+.cover .ph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:44px;color:color-mix(in srgb,var(--c) 70%,transparent);opacity:.55}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;transition:opacity .35s ease,transform .4s ease}
+.cover img.ok{opacity:1}
+.card:hover .cover img.ok{transform:scale(1.03)}
+.cover.nocover img{display:none}
 .tile{flex:0 0 auto;width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--surface));border:1px solid color-mix(in srgb,var(--c) 28%,transparent)}
 .tile.emoji{font-size:24px}
-.meta{min-width:0;display:flex;flex-direction:column;gap:2px;padding-right:56px}
+.meta{min-width:0;flex:1;display:flex;flex-direction:column;gap:2px}
 .name{font-weight:700;font-size:15.5px;line-height:1.3}
 .host{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .desc{font-size:13.5px;color:var(--muted);margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.list .card a{padding:10px 14px;align-items:center}
+.list .cover{display:none}
+.list .crow{padding:10px 14px;align-items:center}
 .list .tile{width:36px;height:36px;font-size:14px;border-radius:9px}
 .list .tile.emoji{font-size:18px}
-.list .meta{flex-direction:row;align-items:baseline;gap:14px;flex-wrap:wrap}
+.list .meta{flex-direction:row;align-items:baseline;gap:14px;flex-wrap:wrap;padding-right:150px}
 .list .desc{margin:0;-webkit-line-clamp:1;flex:1 1 200px}
 
-.acts{position:absolute;top:10px;right:10px;display:flex;gap:2px}
+.acts{position:absolute;top:10px;right:10px;display:flex;gap:4px}
 .list .acts{top:50%;transform:translateY(-50%)}
-.ib{width:30px;height:30px;border-radius:8px;border:0;background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center;opacity:.0;transition:opacity .15s,background .15s}
+.ib{width:32px;height:32px;border-radius:9px;border:0;background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--muted);cursor:pointer;display:grid;place-items:center;opacity:0;transition:opacity .15s,background .15s;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .card:hover .ib,.card:focus-within .ib,.ib.on{opacity:1}
 .ib:hover{background:var(--surface-2);color:var(--ink)}
 .ib.on{color:var(--star)}
@@ -108,51 +164,110 @@ button,input,textarea,select{font:inherit;color:inherit}
 .empty{border:1.5px dashed var(--line);border-radius:var(--r);padding:36px 20px;text-align:center;color:var(--muted);background:var(--surface-2)}
 .empty h3{font-family:var(--f-display);color:var(--ink);font-size:20px;margin:0 0 6px}
 .empty p{margin:0 auto 16px;max-width:52ch}
-.ro{font-size:13px;color:var(--muted);font-family:var(--f-mono)}
+.foot{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between}
+.foot kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--line);border-radius:5px;padding:0 5px;background:var(--surface)}
 
-/* Modal */
+/* Modales */
 .ov{position:fixed;inset:0;z-index:30;background:color-mix(in srgb,#0A0F1A 55%,transparent);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:max(24px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
-.modal{width:100%;max-width:520px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);margin-top:6vh}
-.m-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 0}
+.modal{width:100%;max-width:540px;background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);margin-top:5vh}
+.m-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px 0}
 .m-head h3{font-family:var(--f-display);font-size:22px;margin:0;letter-spacing:-.01em}
+.x{width:34px;height:34px;border-radius:9px;border:0;background:transparent;color:var(--muted);cursor:pointer;display:grid;place-items:center}
+.x:hover{background:var(--surface-2);color:var(--ink)}
 .tabs{display:flex;gap:4px;padding:14px 20px 0}
 .tab{border:1px solid var(--line);background:transparent;border-radius:999px;padding:5px 12px;cursor:pointer;font-size:13px;color:var(--muted)}
 .tab[aria-selected="true"]{background:var(--surface-2);color:var(--ink);border-color:var(--ink)}
-form{padding:16px 20px 20px;display:grid;gap:14px}
+.mbody{padding:16px 20px 20px;display:grid;gap:14px}
+form.mbody{margin:0}
 label{display:grid;gap:6px;font-size:13px;font-weight:700}
 label small{font-weight:400;color:var(--muted)}
 .inp{width:100%;border:1px solid var(--line);background:var(--surface-2);border-radius:10px;padding:10px 12px;font-size:15px;font-weight:400}
 .inp:focus{outline:none;border-color:var(--accent);background:var(--surface)}
 textarea.inp{min-height:84px;resize:vertical}
 textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
-.row{display:grid;grid-template-columns:1fr 110px;gap:12px}
+.two{display:grid;grid-template-columns:1fr 110px;gap:12px}
 .check{display:flex;align-items:center;gap:10px;font-weight:400;font-size:14px}
 .check input{width:18px;height:18px;accent-color:var(--accent)}
 .err{color:var(--danger);font-size:13px;min-height:1em;margin:0}
+.note{font-size:13.5px;color:var(--muted);margin:0}
+.note b{color:var(--ink)}
 .m-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
 .m-foot .r{display:flex;gap:10px;margin-left:auto}
 .preview{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:var(--surface-2);border:1px solid var(--line)}
+.pv-cover{flex:0 0 auto;width:112px;aspect-ratio:16/10;border-radius:8px;border:1px solid var(--line)}
+.auto-badge{font-family:var(--f-mono);font-size:10.5px;font-weight:400;color:var(--accent);margin-left:6px}
+.steps{margin:0;padding-left:20px;font-size:14px;display:grid;gap:6px}
+.steps code,.note code{font-family:var(--f-mono);font-size:12.5px;background:var(--surface-2);border:1px solid var(--line);border-radius:5px;padding:0 5px}
+.ext{color:var(--accent);font-weight:700}
 
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:all .2s;z-index:40;pointer-events:none}
+/* Categorías */
+.cat-rows{display:grid;gap:8px;max-height:52vh;overflow:auto;padding-right:2px}
+.cat-row{display:grid;grid-template-columns:auto 44px 1fr auto;gap:8px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.cat-row .ord{display:grid;gap:2px}
+.cat-row .ord button,.cat-row .del{border:0;background:transparent;color:var(--muted);cursor:pointer;border-radius:6px;width:26px;height:20px;display:grid;place-items:center}
+.cat-row .del{width:34px;height:34px}
+.cat-row .ord button:hover,.cat-row .del:hover{background:var(--surface);color:var(--ink)}
+.cat-row .del.armed{background:var(--danger);color:#fff}
+.cat-row .inp{padding:8px 10px;font-size:14px;background:var(--surface)}
+.cat-row .ic{text-align:center;padding:8px 4px}
+.cat-row .sw{grid-column:2 / -1;display:flex;gap:6px;align-items:center;font-size:12px;color:var(--muted)}
+.sw button{width:22px;height:22px;border-radius:50%;border:2px solid transparent;background:var(--c);cursor:pointer}
+.sw button[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 2px var(--surface)}
+
+/* Compartir */
+.share-box{display:grid;justify-items:center;gap:14px;text-align:center}
+.qr{background:#fff;padding:14px;border-radius:14px;border:1px solid var(--line);line-height:0}
+.qr img,.qr canvas{display:block;width:220px;height:220px}
+.share-url{font-family:var(--f-mono);font-size:13px;word-break:break-all;color:var(--muted);user-select:all}
+.share-acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ov.proj{background:#fff}
+.ov.proj .modal{max-width:none;margin:0;border:0;box-shadow:none;background:#fff;color:#131A28;min-height:100%;display:grid;place-items:center}
+.ov.proj .qr img,.ov.proj .qr canvas{width:min(70vh,80vw);height:min(70vh,80vw)}
+.ov.proj .share-title{font-size:clamp(28px,4vw,48px)}
+.ov.proj .share-url{font-size:clamp(16px,2vw,24px);color:#131A28}
+.ov.proj .share-acts,.ov.proj .m-head .x{display:none}
+.share-title{font-family:var(--f-display);font-weight:800;font-size:24px;letter-spacing:-.01em;margin:0}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:all .2s;z-index:60;pointer-events:none;max-width:calc(100vw - 32px);text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-@media (max-width:560px){
-  .bar .ctrl{flex:1 1 auto}
+@media (max-width:640px){
+  .bar .search{flex:1 1 100%}
+  .bar .ctrl{flex:1 1 0;min-width:0}
+  .bar .btn-primary{width:46px;padding:0}
   .btn-label{display:none}
-  .row{grid-template-columns:1fr 90px}
-  .list .meta{padding-right:70px}
+  .two{grid-template-columns:1fr 90px}
+  .list .meta{padding-right:118px}
+  .list .acts .ib.hide-sm{display:none}
+  .pill .lbl{display:none}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-
-
 <div class="wrap" id="app">
   <header class="top">
     <div class="brand">
       <h1>Lanzadera<span>.</span></h1>
-      <div class="stat" id="stat">Conectando…</div>
+      <div class="stat"><span id="stat">Cargando…</span><a id="site-link" href="https://adelvalle2010.github.io/lanzador/" title="Dirección pública de la Lanzadera">adelvalle2010.github.io/lanzador</a></div>
+    </div>
+    <div class="tools">
+      <button class="pill" id="sync" data-s="ro" title="Estado del guardado"><span class="d"></span><span class="lbl" id="sync-lbl">Solo lectura</span></button>
+      <button class="btn btn-ghost sm sq" id="share-hub" title="Compartir la Lanzadera (enlace y QR)" aria-label="Compartir la Lanzadera"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M14 21h7M21 17v4"/></svg></button>
+      <button class="btn btn-ghost sm sq" id="theme" title="Tema" aria-label="Cambiar tema"></button>
+      <details class="menu" id="menu">
+        <summary class="btn btn-ghost sm" aria-label="Más opciones"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg><span class="btn-label">Más</span></summary>
+        <div class="menu-pop">
+          <button id="m-cats"><span>🏷️</span><span>Categorías<small>Crear, renombrar, colores y orden</small></span></button>
+          <button id="m-enrich"><span>✨</span><span>Completar info<small>Descripciones reales de cada sitio</small></span></button>
+          <hr>
+          <button id="m-exp"><span>⬇️</span><span>Exportar<small>Descargar apps.json</small></span></button>
+          <button id="m-imp"><span>⬆️</span><span>Importar<small>Sumar apps desde un archivo JSON</small></span></button>
+          <hr>
+          <button id="m-gh"><span>🔑</span><span id="m-gh-lbl">Conectar con GitHub<small>Para guardar cambios para siempre</small></span></button>
+        </div>
+      </details>
+      <input type="file" id="imp-file" accept=".json,application/json" hidden>
     </div>
   </header>
 
@@ -172,57 +287,110 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
       <button id="v-grid" aria-pressed="true" title="Tarjetas"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
       <button id="v-list" aria-pressed="false" title="Lista"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 6h13M8 12h13M8 18h13M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></button>
     </div>
-    <button class="btn btn-ghost" id="exp" title="Descargar apps.json con tus cambios"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="btn-label">Exportar</span></button>
-    <button class="btn btn-ghost" id="rst" title="Descartar cambios locales y volver a apps.json"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg><span class="btn-label">Restaurar</span></button>
-    <button class="btn btn-primary" id="add" hidden><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="btn-label">Nueva app</span></button>
+    <button class="btn btn-primary" id="add"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="btn-label">Nueva app</span></button>
   </div>
 
   <nav class="chips" id="chips" aria-label="Categorías"></nav>
   <main id="main"></main>
+
+  <footer class="foot">
+    <span>Prof. Andrés del Valle · <span id="foot-src"></span></span>
+    <span><kbd>/</kbd> buscar · <kbd>Enter</kbd> abrir la primera · <kbd>N</kbd> nueva app</span>
+  </footer>
 </div>
 
-<div class="ov" id="ov" hidden>
+<!-- Alta / edición -->
+<div class="ov" id="ov-app" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-title">
-    <div class="m-head">
-      <h3 id="m-title">Nueva aplicación</h3>
-      <button class="ib on" style="opacity:1;color:var(--muted)" id="m-close" aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    </div>
+    <div class="m-head"><h3 id="m-title">Nueva aplicación</h3><button class="x" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
     <div class="tabs" id="m-tabs" role="tablist">
       <button class="tab" role="tab" aria-selected="true" data-mode="one">Una app</button>
       <button class="tab" role="tab" aria-selected="false" data-mode="bulk">Varias a la vez</button>
     </div>
-
-    <form id="f-one" novalidate>
-      <label>Dirección (URL)<input class="inp" id="f-url" type="url" inputmode="url" placeholder="https://mi-app.netlify.app" required></label>
-      <div class="row">
-        <label>Nombre<input class="inp" id="f-name" maxlength="60" placeholder="Mi aplicación" required></label>
-        <label>Ícono <small>emoji o 2 letras</small><input class="inp" id="f-icon" maxlength="4" placeholder="Auto"></label>
+    <form id="f-one" class="mbody" novalidate>
+      <label>Dirección (URL)<input class="inp" id="f-url" type="url" inputmode="url" placeholder="https://adelvalle2010.github.io/mi-app/" required></label>
+      <div class="two">
+        <label>Nombre<input class="inp" id="f-name" maxlength="70" placeholder="Mi aplicación" required></label>
+        <label>Ícono <small>emoji</small><input class="inp" id="f-icon" maxlength="4" placeholder="Auto"></label>
       </div>
       <label>Categoría<input class="inp" id="f-cat" list="cats" maxlength="40" placeholder="Ej.: Java Web"></label>
       <datalist id="cats"></datalist>
-      <label>Descripción <small>opcional</small><textarea class="inp" id="f-desc" maxlength="240" placeholder="Para qué sirve, con qué grupo la usás…"></textarea></label>
+      <label><span>Descripción <small>se completa sola, podés cambiarla</small> <span class="auto-badge" id="d-badge" hidden>✨ automática</span></span><textarea class="inp" id="f-desc" maxlength="240" placeholder="Para qué sirve, con qué grupo la usás…"></textarea></label>
+      <label>Imagen de portada <small>URL opcional; vacío = captura automática del sitio</small><input class="inp" id="f-img" type="url" inputmode="url" placeholder="Automática"></label>
       <label class="check"><input type="checkbox" id="f-fav"> Marcar como favorita</label>
       <div class="preview" id="f-prev"></div>
       <p class="err" id="f-err" role="alert"></p>
       <div class="m-foot">
         <button type="button" class="btn btn-danger" id="f-del" hidden>Eliminar</button>
-        <div class="r">
-          <button type="button" class="btn btn-ghost" id="f-cancel">Cancelar</button>
-          <button type="submit" class="btn btn-primary" id="f-save">Guardar</button>
-        </div>
+        <div class="r"><button type="button" class="btn btn-ghost" data-close>Cancelar</button><button type="submit" class="btn btn-primary" id="f-save">Guardar</button></div>
       </div>
     </form>
-
-    <form id="f-bulk" novalidate hidden>
+    <form id="f-bulk" class="mbody" novalidate hidden>
       <label>Direcciones <small>una por línea; podés poner «Nombre | URL»</small>
-        <textarea class="inp mono" id="b-urls" placeholder="https://simulador-http.netlify.app&#10;Quiz Servlets | https://quiz-servlets.netlify.app"></textarea></label>
+        <textarea class="inp mono" id="b-urls" placeholder="https://adelvalle2010.github.io/simulador-db/&#10;Quiz Servlets | https://quiz-servlets.netlify.app"></textarea></label>
       <label>Categoría para todas<input class="inp" id="b-cat" list="cats" maxlength="40" placeholder="Ej.: Diseño Web 9.º"></label>
       <p class="err" id="b-err" role="alert"></p>
-      <div class="m-foot"><div class="r">
-        <button type="button" class="btn btn-ghost" id="b-cancel">Cancelar</button>
-        <button type="submit" class="btn btn-primary" id="b-save">Agregar todas</button>
-      </div></div>
+      <div class="m-foot"><div class="r"><button type="button" class="btn btn-ghost" data-close>Cancelar</button><button type="submit" class="btn btn-primary" id="b-save">Agregar todas</button></div></div>
     </form>
+  </div>
+</div>
+
+<!-- Conectar GitHub -->
+<div class="ov" id="ov-gh" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gh-title">
+    <div class="m-head"><h3 id="gh-title">Guardar para siempre</h3><button class="x" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <form id="f-gh" class="mbody" novalidate>
+      <p class="note" id="gh-intro">Cada app que agregues, edites o borres se guarda en <code>apps.json</code> de tu repositorio de GitHub. Queda para siempre y se ve igual en cualquier computadora o celular. Para eso la página necesita un <b>token</b> de GitHub, que se crea una sola vez:</p>
+      <ol class="steps" id="gh-steps">
+        <li>Abrí <a class="ext" href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">crear token en GitHub ↗</a></li>
+        <li>Nombre: <code>Lanzadera</code>. Vencimiento: el más largo que te deje.</li>
+        <li><b>Repository access</b> → <i>Only select repositories</i> → <code>lanzador</code>.</li>
+        <li><b>Permissions</b> → <i>Contents</i> → <b>Read and write</b>.</li>
+        <li>Tocá <i>Generate token</i>, copialo y pegalo acá abajo.</li>
+      </ol>
+      <label>Token<input class="inp" id="gh-token" type="password" autocomplete="off" spellcheck="false" placeholder="github_pat_…"></label>
+      <div class="two" style="grid-template-columns:1fr 1fr">
+        <label>Repositorio<input class="inp" id="gh-repo" spellcheck="false" value="adelvalle2010/lanzador"></label>
+        <label>Rama<input class="inp" id="gh-branch" spellcheck="false" value="main"></label>
+      </div>
+      <p class="note">El token queda guardado <b>solo en este navegador</b>. Los alumnos y visitas ven la Lanzadera en modo lectura. Conectá cada dispositivo donde quieras editar.</p>
+      <p class="err" id="gh-err" role="alert"></p>
+      <div class="m-foot">
+        <button type="button" class="btn btn-danger" id="gh-off" hidden>Desconectar</button>
+        <div class="r"><button type="button" class="btn btn-ghost" data-close>Cancelar</button><button type="submit" class="btn btn-primary" id="gh-save">Conectar</button></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Categorías -->
+<div class="ov" id="ov-cats" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="c-title">
+    <div class="m-head"><h3 id="c-title">Categorías</h3><button class="x" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="mbody">
+      <p class="note">Cambiá el nombre, el ícono, el color o el orden. Al borrar una categoría, sus apps pasan a «Sin categoría».</p>
+      <div class="cat-rows" id="cat-rows"></div>
+      <div style="display:flex;gap:8px"><input class="inp" id="cat-new" maxlength="40" placeholder="Nueva categoría, ej.: Laboratorio"><button class="btn btn-ghost" id="cat-add" type="button">Agregar</button></div>
+      <p class="err" id="cat-err" role="alert"></p>
+      <div class="m-foot"><div class="r"><button type="button" class="btn btn-ghost" data-close>Cancelar</button><button type="button" class="btn btn-primary" id="cat-save">Guardar</button></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Compartir -->
+<div class="ov" id="ov-share" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="s-title">
+    <div class="m-head"><span></span><button class="x" data-close aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="mbody share-box">
+      <h3 class="share-title" id="s-title"></h3>
+      <div class="qr" id="s-qr" aria-label="Código QR"></div>
+      <div class="share-url" id="s-url"></div>
+      <div class="share-acts">
+        <button class="btn btn-primary" id="s-copy">Copiar enlace</button>
+        <a class="btn btn-ghost" id="s-open" target="_blank" rel="noopener">Abrir</a>
+        <button class="btn btn-ghost" id="s-proj">Proyectar QR</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -230,67 +398,298 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
 
 <script>
 (() => {
+  "use strict";
   const $ = s => document.querySelector(s);
-  const S = { apps: [], loaded: false, q: "", cat: "all", sort: "cat", view: "grid", canEdit: false, db: null, editing: null };
+  const SITE = "https://adelvalle2010.github.io/lanzador/";
+  const DEF_GH = { owner: "adelvalle2010", repo: "lanzador", branch: "main", path: "apps.json" };
   const SIN = "Sin categoría";
-  try { S.view = localStorage.getItem("lz-view") || "grid"; S.sort = localStorage.getItem("lz-sort") || "cat"; } catch (e) {}
+  const LS = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+    del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  };
 
+  const S = {
+    data: { version: 2, categories: {}, apps: [] }, sha: null, loaded: false, source: "",
+    q: "", cat: "all", sort: LS.get("lz-sort", "cat"), view: LS.get("lz-view", "grid"),
+    gh: LS.get("lz-gh", null), ghOk: false, sync: "ro", syncMsg: "",
+    opens: LS.get("lz-opens", {}), editing: null
+  };
+  const canEdit = () => !!(S.gh && S.gh.token && S.ghOk);
+
+  /* ---------- Utilidades ---------- */
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const hostOf = u => { try { return new URL(u).host.replace(/^www\./, ""); } catch (e) { return u; } };
-  const hue = name => { let h = 0; for (const ch of String(name)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return "var(--c" + (h % 6 + 1) + ")"; };
+  const hostOf = u => { try { const x = new URL(u); return (x.host + (x.pathname.length > 1 ? x.pathname.replace(/\/$/, "") : "")).replace(/^www\./, ""); } catch (e) { return u; } };
+  const hashHue = name => { let h = 0; for (const ch of String(name)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return h % 6 + 1; };
   const initials = n => { const w = String(n).replace(/[^\p{L}\p{N} ]/gu, " ").trim().split(/\s+/).filter(Boolean); if (!w.length) return "?"; return (w.length === 1 ? w[0].slice(0, 2) : w[0][0] + w[1][0]).toUpperCase(); };
   const isEmoji = s => /\p{Extended_Pictographic}/u.test(s || "");
-  const normUrl = raw => { let u = String(raw || "").trim(); if (!u) return null; if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(u)) u = "https://" + u; try { const x = new URL(u); if (!/^https?:$/.test(x.protocol)) return null; return x.href; } catch (e) { return null; } };
-  const nameFromUrl = u => { try { const h = new URL(u).hostname.replace(/^www\./, ""); const base = /\.(netlify|vercel|github|pages|web)\./.test(h) || h.split(".").length > 2 ? h.split(".")[0] : h.split(".").slice(0, -1).join(" "); const t = base.replace(/[-_]+/g, " ").trim(); return t.charAt(0).toUpperCase() + t.slice(1); } catch (e) { return ""; } };
+  const normUrl = raw => { let u = String(raw || "").trim(); if (!u) return null; if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(u)) u = "https://" + u; try { const x = new URL(u); if (!/^https?:$/.test(x.protocol) || !x.hostname.includes(".")) return null; return x.href; } catch (e) { return null; } };
+  const sameUrl = (a, b) => String(a).replace(/\/$/, "").toLowerCase() === String(b).replace(/\/$/, "").toLowerCase();
+  const nameFromUrl = u => {
+    try {
+      const x = new URL(u); const h = x.hostname.replace(/^www\./, "");
+      const seg = x.pathname.split("/").filter(Boolean)[0];
+      let base = /github\.io$/.test(h) && seg ? seg : (/\.(netlify|vercel|github|pages|web)\./.test(h) || h.split(".").length > 2 ? h.split(".")[0] : h.split(".").slice(0, -1).join(" "));
+      base = base.replace(/[-_]+/g, " ").replace(/([a-z])([A-Z])/g, "$1 $2").trim();
+      return base.charAt(0).toUpperCase() + base.slice(1);
+    } catch (e) { return ""; }
+  };
   const ago = t => { if (!t) return ""; const m = Math.round((Date.now() - t) / 60000); if (m < 1) return "recién"; if (m < 60) return "hace " + m + " min"; const h = Math.round(m / 60); if (h < 24) return "hace " + h + " h"; const d = Math.round(h / 24); return "hace " + d + (d === 1 ? " día" : " días"); };
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+  const clone = o => JSON.parse(JSON.stringify(o));
+  const byName = (a, b) => String(a.name).localeCompare(String(b.name), "es", { sensitivity: "base" });
+  let tt; const toast = msg => { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2800); };
+  async function copyText(text) {
+    try { await navigator.clipboard.writeText(text); return true; }
+    catch (e) { const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.appendChild(ta); ta.select(); let ok = false; try { ok = document.execCommand("copy"); } catch (x) {} ta.remove(); return ok; }
+  }
 
-  let tt; const toast = msg => { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2200); };
+  /* ---------- Modelo de datos ---------- */
+  function normalize(raw) {
+    const d = Array.isArray(raw) ? { categories: {}, apps: raw } : (raw && typeof raw === "object" ? raw : {});
+    const apps = (Array.isArray(d.apps) ? d.apps : []).filter(a => a && a.url).map(a => ({
+      id: String(a.id || uid()), name: String(a.name || nameFromUrl(a.url) || "Sin nombre"), url: String(a.url),
+      icon: String(a.icon || ""), category: String(a.category || ""), description: String(a.description || ""),
+      image: String(a.image || ""), favorite: !!a.favorite, createdAt: +a.createdAt || 0
+    }));
+    const categories = {};
+    if (d.categories && typeof d.categories === "object") for (const [k, v] of Object.entries(d.categories)) if (k && k !== SIN) categories[k] = { color: +(v && v.color) || 0, icon: String((v && v.icon) || ""), order: Number.isFinite(+(v && v.order)) ? +v.order : 999 };
+    return { version: 2, categories, apps };
+  }
+  function serialize(d) {
+    return JSON.stringify({ version: 2, updated: new Date().toISOString(), categories: d.categories, apps: d.apps }, null, 2) + "\n";
+  }
+  const catCfg = n => S.data.categories[n] || null;
+  const catColorN = n => (catCfg(n) && catCfg(n).color) || hashHue(n);
+  const catColor = n => "var(--c" + catColorN(n || SIN) + ")";
+  function catList() {
+    const names = new Set(Object.keys(S.data.categories));
+    S.data.apps.forEach(a => { if (a.category) names.add(a.category); });
+    const arr = [...names].sort((a, b) => { const oa = catCfg(a)?.order ?? 999, ob = catCfg(b)?.order ?? 999; return oa - ob || a.localeCompare(b, "es"); });
+    if (S.data.apps.some(a => !a.category)) arr.push(SIN);
+    return arr;
+  }
 
+  /* ---------- Imagen, ícono y descripción automáticos ---------- */
+  const shotUrl = u => "https://s.wordpress.com/mshots/v1/" + encodeURIComponent(u) + "?w=640&h=400";
+  const coverOf = a => (a.image && a.image.trim()) || shotUrl(a.url);
+  const TOPICS = [
+    [/ajedrez|escaque|chess/, "♞", "para aprender ajedrez: aperturas, táctica y estrategia"],
+    [/latex/, "📐", "sobre LaTeX para escribir documentos académicos"],
+    [/inner join|\bjoin\b/, "🔗", "sobre consultas JOIN en SQL, paso a paso"],
+    [/\bdao\b|jdbc/, "🔗", "sobre el patrón DAO y el acceso a datos con JDBC"],
+    [/conexi[oó]n.*(base|datos|bd)|base de datos conexi/, "🔌", "sobre cómo conectar una aplicación a una base de datos"],
+    [/sql|mysql|base de datos|bases de datos|\bbd\b|biblioutu/, "🗄️", "sobre bases de datos y consultas SQL"],
+    [/\bsga\b|gesti[oó]n acad/, "🏫", "del Sistema de Gestión Académica (Java Swing + MySQL)"],
+    [/ciclo de vida.*jsp|jsp.*ciclo de vida/, "🔄", "sobre el ciclo de vida de una página JSP"],
+    [/doget|dopost/, "📨", "sobre los métodos doGet y doPost de un Servlet"],
+    [/scriptle|jstl|expression language/, "🏷️", "sobre JSP con Expression Language y etiquetas JSTL"],
+    [/servlet/, "☕", "sobre Servlets en Java Web: peticiones, respuestas y ciclo de vida"],
+    [/jsp/, "☕", "sobre páginas JSP en Java Web"],
+    [/http|protocolo/, "🌐", "sobre el protocolo HTTP: peticiones, respuestas y códigos de estado"],
+    [/html/, "📄", "de diseño web sobre HTML y la estructura de una página"],
+    [/css|flexbox|estilos/, "🎨", "de diseño web sobre CSS"],
+    [/javascript|\bjs\b|\bdom\b/, "⚡", "sobre JavaScript en el navegador"],
+    [/\bapa\b|cita|referencia|bibliograf/, "📚", "para citas, referencias y bibliografía en normas APA"],
+    [/arreglo|array|vector|matriz/, "🧮", "sobre arreglos (arrays) en programación"],
+    [/java/, "☕", "de programación en Java"],
+    [/python/, "🐍", "de programación en Python"],
+    [/\bredes?\b|network|cisco|\bip\b/, "🖧", "sobre redes de computadoras"],
+    [/ultrasonido|sensor|arduino/, "📡", "sobre sensores de ultrasonido y electrónica"],
+    [/comunicaci[oó]n/, "💬", "sobre los elementos de la comunicación"],
+    [/libreta|asistencia|notas/, "📒", "para registrar asistencia, actividades y notas"],
+  ];
+  const KINDS = [
+    [/curso/, "Curso"], [/apunte/, "Apuntes"], [/cuestionario|quiz|test\b/, "Cuestionario"], [/simulador|simulaci/, "Simulador interactivo"],
+    [/historieta|c[oó]mic/, "Historieta"], [/webquest/, "WebQuest"], [/ejercicio|pr[aá]ctic/, "Ejercicios"],
+    [/paso a paso|gu[ií]a|tutorial/, "Guía paso a paso"], [/actividad/, "Actividad"], [/documentaci/, "Documentación"],
+    [/gestor|gesti[oó]n de normas|herramienta/, "Herramienta"], [/definici|introducci|teor/, "Material teórico"], [/animad/, "Recurso animado"],
+  ];
+  const autoCache = new Map();
+  function autoMeta(a) {
+    const key = (a.name || "") + "|" + (a.url || "") + "|" + (a.category || "");
+    if (autoCache.has(key)) return autoCache.get(key);
+    let slug = ""; try { const x = new URL(a.url); slug = x.hostname.split(".")[0] + " " + x.pathname; } catch (e) {}
+    const txt = ((a.name || "") + " " + slug.replace(/[-_/]/g, " ") + " " + (a.category || "")).toLowerCase();
+    const t = TOPICS.find(([re]) => re.test(txt));
+    const k = KINDS.find(([re]) => re.test(txt));
+    const kind = k ? k[1] : "Recurso";
+    const desc = t ? `${kind} ${t[2]}.` : `${kind}${a.category ? " de " + a.category : " web"}: ${a.name || hostOf(a.url)}.`;
+    const out = { emoji: t ? t[1] : "", desc };
+    autoCache.set(key, out); return out;
+  }
+  const iconOf = a => (a.icon && a.icon.trim()) || autoMeta(a).emoji || (a.category && catCfg(a.category)?.icon) || initials(a.name);
+  async function fetchMeta(url) {
+    try {
+      const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 9000);
+      const r = await fetch("https://api.microlink.io/?url=" + encodeURIComponent(url), { signal: ctl.signal });
+      clearTimeout(tm);
+      const j = await r.json(); if (j.status !== "success" || !j.data) return null;
+      const bad = /^(page not found|not found|netlify|index|document|untitled|home|site not found)$/i;
+      let title = (j.data.title || "").trim(); if (bad.test(title) || /404/.test(title)) title = "";
+      let desc = (j.data.description || "").replace(/\s+/g, " ").trim();
+      if (desc.length < 20 || desc === title || bad.test(desc)) desc = "";
+      return { title: title.slice(0, 70), description: desc.slice(0, 240) };
+    } catch (e) { return null; }
+  }
+  document.addEventListener("load", e => {
+    const img = e.target; if (!(img instanceof HTMLImageElement) || !img.closest(".cover,.pv-cover")) return;
+    if (img.dataset.shot === "1" && img.naturalWidth !== 640) {
+      const n = +(img.dataset.try || 0);
+      if (n < 4) { img.dataset.try = n + 1; setTimeout(() => { img.src = img.src.replace(/&r=\d+$/, "") + "&r=" + (n + 1); }, 4000 + n * 3000); return; }
+    }
+    img.classList.add("ok");
+  }, true);
+  document.addEventListener("error", e => {
+    const img = e.target; if (!(img instanceof HTMLImageElement)) return;
+    const c = img.closest(".cover"); if (c) c.classList.add("nocover");
+  }, true);
+
+  /* ---------- GitHub ---------- */
+  const b64enc = s => { const b = new TextEncoder().encode(s); let bin = ""; for (let i = 0; i < b.length; i += 0x8000) bin += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(bin); };
+  const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(String(s).replace(/\s/g, "")), c => c.charCodeAt(0)));
+  const ghCfg = () => Object.assign({}, DEF_GH, S.gh || {});
+  function ghFetch(path, opts = {}) {
+    const headers = { "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "Authorization": "Bearer " + S.gh.token };
+    if (opts.body) headers["Content-Type"] = "application/json";
+    return fetch("https://api.github.com" + path, Object.assign({ cache: "no-store" }, opts, { headers }));
+  }
+  const contentsPath = () => { const c = ghCfg(); return `/repos/${c.owner}/${c.repo}/contents/${c.path.split("/").map(encodeURIComponent).join("/")}`; };
+  async function ghGet() {
+    const c = ghCfg();
+    let r; try { r = await ghFetch(contentsPath() + "?ref=" + encodeURIComponent(c.branch)); } catch (e) { throw { status: 0 }; }
+    if (r.status === 404) return { data: normalize([]), sha: null };
+    if (!r.ok) throw { status: r.status };
+    const j = await r.json();
+    let content = j.content;
+    if (!content && j.download_url) { const rr = await fetch(j.download_url, { cache: "no-store" }); content = b64enc(await rr.text()); }
+    return { data: normalize(JSON.parse(b64dec(content))), sha: j.sha };
+  }
+  async function ghPut(data, sha, message) {
+    const c = ghCfg();
+    const body = { message, content: b64enc(serialize(data)), branch: c.branch };
+    if (sha) body.sha = sha;
+    let r; try { r = await ghFetch(contentsPath(), { method: "PUT", body: JSON.stringify(body) }); } catch (e) { throw { status: 0 }; }
+    if (!r.ok) throw { status: r.status };
+    const j = await r.json(); return j.content && j.content.sha;
+  }
+  const ghErr = e => {
+    const s = e && e.status;
+    if (s === 401) return "GitHub no aceptó el token: puede estar vencido o mal copiado. Volvé a conectar.";
+    if (s === 403) return "El token no tiene permiso para escribir. Revisá que Contents esté en «Read and write».";
+    if (s === 404) return "No se encontró el repositorio o la rama. Revisá que el token tenga acceso a «lanzador».";
+    if (s === 0) return "Sin conexión a internet: no se pudo guardar.";
+    return "GitHub respondió con un error (" + s + "). Probá de nuevo en un rato.";
+  };
+
+  function setSync(state, msg) {
+    S.sync = state; S.syncMsg = msg || "";
+    const p = $("#sync"); p.dataset.s = state;
+    $("#sync-lbl").textContent = state === "ok" ? "Guardado en GitHub" : state === "saving" ? "Guardando…" : state === "error" ? "Error al guardar" : "Solo lectura · Editar";
+    p.title = state === "ro" ? "Conectá GitHub para agregar y editar apps" : (msg || p.title);
+  }
+
+  let queue = Promise.resolve();
+  /** Aplica un cambio: primero en pantalla y después sobre la última versión de apps.json en GitHub. */
+  function commit(message, op) {
+    if (!canEdit()) { openGh(); return Promise.reject({ status: "ro" }); }
+    S.data = op(clone(S.data)); cacheSave(); render();
+    setSync("saving");
+    const job = queue.then(async () => {
+      for (let attempt = 0; attempt < 3; attempt++) {
+        const cur = await ghGet();
+        const next = op(clone(cur.data));
+        try { const sha = await ghPut(next, cur.sha, message); S.sha = sha; S.data = next; cacheSave(); render(); setSync("ok"); return; }
+        catch (e) { if ((e.status === 409 || e.status === 422) && attempt < 2) continue; throw e; }
+      }
+    });
+    queue = job.catch(() => {});
+    return job.catch(async e => {
+      const m = ghErr(e); setSync("error", m); toast(m);
+      if (e.status === 401) { S.ghOk = false; render(); }
+      try { const cur = await ghGet(); S.data = cur.data; S.sha = cur.sha; cacheSave(); render(); } catch (x) {}
+      throw e;
+    });
+  }
+
+  /* ---------- Carga ---------- */
+  const cacheSave = () => LS.set("lz-cache", S.data);
+  async function fetchPublic() {
+    const c = ghCfg();
+    const tries = [];
+    if (location.protocol !== "file:") tries.push("apps.json?t=" + Date.now());
+    tries.push(`https://raw.githubusercontent.com/${c.owner}/${c.repo}/${c.branch}/${c.path}?t=${Date.now()}`);
+    for (const u of tries) { try { const r = await fetch(u, { cache: "no-store" }); if (r.ok) return normalize(await r.json()); } catch (e) {} }
+    return null;
+  }
+  async function load() {
+    const cached = LS.get("lz-cache", null);
+    if (cached) { S.data = normalize(cached); S.loaded = true; S.source = "cache"; render(); }
+    if (S.gh && S.gh.token) {
+      try { const cur = await ghGet(); S.data = cur.data; S.sha = cur.sha; S.ghOk = true; S.source = "github"; setSync("ok"); }
+      catch (e) { S.ghOk = false; setSync("error", ghErr(e)); toast(ghErr(e)); }
+    }
+    if (S.source !== "github") { const d = await fetchPublic(); if (d) { S.data = d; S.source = "pages"; } if (!S.ghOk && S.sync !== "error") setSync("ro"); }
+    S.loaded = true; cacheSave(); render();
+  }
+
+  /* ---------- Render ---------- */
   const ICON = {
-    star: '<svg width="16" height="16" viewBox="0 0 24 24" fill="FILL" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg>',
-    edit: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg>'
+    star: f => `<svg width="16" height="16" viewBox="0 0 24 24" fill="${f ? "currentColor" : "none"}" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></svg>`,
+    edit: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg>',
+    link: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>',
+    qr: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3M21 14v.01M14 21h7M21 17v4"/></svg>',
+    sun: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+    moon: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>',
+    auto: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg>'
   };
 
   function filtered() {
     const q = S.q.trim().toLowerCase();
-    return S.apps.filter(a => {
+    return S.data.apps.filter(a => {
       if (S.cat === "__fav" && !a.favorite) return false;
       if (S.cat !== "all" && S.cat !== "__fav" && (a.category || SIN) !== S.cat) return false;
       if (!q) return true;
-      return [a.name, a.url, a.description, a.category].some(v => String(v || "").toLowerCase().includes(q));
+      return [a.name, a.url, a.description, a.category, autoMeta(a).desc].some(v => String(v || "").toLowerCase().includes(q));
     });
   }
-  const byName = (a, b) => String(a.name).localeCompare(String(b.name), "es", { sensitivity: "base" });
-
   function card(a) {
-    const c = hue(a.category || SIN);
-    const ic = a.icon && a.icon.trim() ? a.icon.trim() : initials(a.name);
-    const sub = S.sort === "recent" && a.lastOpened ? " · " + ago(a.lastOpened) : "";
+    const c = catColor(a.category);
+    const ic = iconOf(a);
+    const desc = a.description || autoMeta(a).desc;
+    const custom = !!(a.image && a.image.trim());
+    const sub = S.sort === "recent" && S.opens[a.id] ? " · " + ago(S.opens[a.id]) : "";
+    const ed = canEdit();
     return `<article class="card" style="--c:${c}">
       <a href="${esc(a.url)}" target="_blank" rel="noopener" data-open="${esc(a.id)}">
-        <span class="tile${isEmoji(ic) ? " emoji" : ""}" aria-hidden="true">${esc(ic)}</span>
-        <span class="meta"><span class="name">${esc(a.name)}</span><span class="host">${esc(hostOf(a.url))}${esc(sub)}</span>${a.description ? `<span class="desc">${esc(a.description)}</span>` : ""}</span>
+        <span class="cover"><span class="ph" aria-hidden="true">${esc(ic)}</span><img src="${esc(coverOf(a))}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-shot="${custom ? 0 : 1}"></span>
+        <span class="crow"><span class="tile${isEmoji(ic) ? " emoji" : ""}" aria-hidden="true">${esc(ic)}</span>
+          <span class="meta"><span class="name">${esc(a.name)}</span><span class="host">${esc(hostOf(a.url))}${esc(sub)}</span><span class="desc">${esc(desc)}</span></span></span>
       </a>
-      ${S.canEdit ? `<div class="acts">
-        <button class="ib${a.favorite ? " on" : ""}" data-fav="${esc(a.id)}" aria-label="${a.favorite ? "Quitar de favoritas" : "Marcar como favorita"}" title="Favorita">${ICON.star.replace("FILL", a.favorite ? "currentColor" : "none")}</button>
-        <button class="ib" data-edit="${esc(a.id)}" aria-label="Editar ${esc(a.name)}" title="Editar">${ICON.edit}</button>
-      </div>` : (a.favorite ? `<div class="acts"><span class="ib on" aria-label="Favorita">${ICON.star.replace("FILL", "currentColor")}</span></div>` : "")}
+      <div class="acts">
+        ${ed ? `<button class="ib${a.favorite ? " on" : ""}" data-fav="${esc(a.id)}" aria-label="${a.favorite ? "Quitar de favoritas" : "Marcar como favorita"}" title="Favorita">${ICON.star(a.favorite)}</button>` : (a.favorite ? `<span class="ib on" title="Favorita">${ICON.star(true)}</span>` : "")}
+        <button class="ib hide-sm" data-copy="${esc(a.id)}" aria-label="Copiar enlace de ${esc(a.name)}" title="Copiar enlace">${ICON.link}</button>
+        <button class="ib" data-share="${esc(a.id)}" aria-label="QR de ${esc(a.name)}" title="Compartir con QR">${ICON.qr}</button>
+        ${ed ? `<button class="ib" data-edit="${esc(a.id)}" aria-label="Editar ${esc(a.name)}" title="Editar">${ICON.edit}</button>` : ""}
+      </div>
     </article>`;
   }
-  const section = (title, list, color) => `<section class="section"><div class="sec-head"><h2>${color ? `<span class="bar-c" style="--c:${color}"></span>` : ""}${esc(title)}</h2><span class="n">${list.length}</span></div><div class="grid">${list.map(card).join("")}</div></section>`;
+  const section = (title, list, color, icon) => `<section class="section"><div class="sec-head"><h2>${color ? `<span class="bar-c" style="--c:${color}"></span>` : ""}${icon ? esc(icon) + " " : ""}${esc(title)}</h2><span class="n">${list.length}</span></div><div class="grid">${list.map(card).join("")}</div></section>`;
 
   function render() {
-    const cats = {};
-    S.apps.forEach(a => { const k = a.category || SIN; cats[k] = (cats[k] || 0) + 1; });
-    const catNames = Object.keys(cats).sort((a, b) => a === SIN ? 1 : b === SIN ? -1 : a.localeCompare(b, "es"));
-    const favN = S.apps.filter(a => a.favorite).length;
-
-    $("#stat").textContent = !S.loaded ? "Conectando…" : `${S.apps.length} ${S.apps.length === 1 ? "aplicación" : "aplicaciones"} · ${catNames.length} ${catNames.length === 1 ? "categoría" : "categorías"}${S.canEdit ? "" : " · solo lectura"}`;
-    $("#cats").innerHTML = catNames.filter(c => c !== SIN).map(c => `<option value="${esc(c)}">`).join("");
+    const apps = S.data.apps;
+    const cats = {}; apps.forEach(a => { const k = a.category || SIN; cats[k] = (cats[k] || 0) + 1; });
+    const names = catList();
+    const favN = apps.filter(a => a.favorite).length;
+    const realCats = names.filter(n => n !== SIN).length;
+    $("#stat").textContent = !S.loaded ? "Cargando…" : `${apps.length} ${apps.length === 1 ? "aplicación" : "aplicaciones"} · ${realCats} ${realCats === 1 ? "categoría" : "categorías"}`;
+    $("#foot-src").textContent = S.source === "github" ? "datos leídos de GitHub" : S.source === "pages" ? "datos de apps.json" : S.source === "cache" ? "datos guardados en este navegador" : "";
+    $("#cats").innerHTML = names.filter(c => c !== SIN).map(c => `<option value="${esc(c)}">`).join("");
+    $("#m-gh-lbl").innerHTML = canEdit() ? 'Conexión con GitHub<small>Conectado · ' + esc(ghCfg().owner + "/" + ghCfg().repo) + '</small>' : 'Conectar con GitHub<small>Para guardar cambios para siempre</small>';
 
     if (S.cat !== "all" && S.cat !== "__fav" && !cats[S.cat]) S.cat = "all";
     const chip = (key, label, n, color) => `<button class="chip" data-cat="${esc(key)}" aria-pressed="${S.cat === key}"${color ? ` style="--c:${color}"` : ""}>${color ? '<span class="dot"></span>' : ""}${esc(label)}<span class="n">${n}</span></button>`;
-    $("#chips").innerHTML = S.apps.length ? chip("all", "Todas", S.apps.length) + (favN ? chip("__fav", "★ Favoritas", favN) : "") + catNames.map(c => chip(c, c, cats[c], hue(c))).join("") : "";
+    $("#chips").innerHTML = apps.length ? chip("all", "Todas", apps.length) + (favN ? chip("__fav", "★ Favoritas", favN) : "") + names.filter(c => cats[c]).map(c => chip(c, (catCfg(c)?.icon ? catCfg(c).icon + " " : "") + c, cats[c], catColor(c === SIN ? "" : c))).join("") : "";
 
     $("#app").classList.toggle("list", S.view === "list");
     $("#v-grid").setAttribute("aria-pressed", S.view === "grid");
@@ -298,86 +697,129 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
     $("#sort").value = S.sort;
 
     const main = $("#main");
-    if (!S.loaded) { main.innerHTML = `<div class="empty"><h3>Cargando tus aplicaciones…</h3><p>Leyendo la lista de aplicaciones…</p></div>`; return; }
-    if (!S.db) { main.innerHTML = `<div class="empty"><h3>No se pudo conectar</h3><p>No se pudo leer apps.json. Revisá que esté en la misma carpeta que index.html.</p></div>`; return; }
-    if (!S.apps.length) { main.innerHTML = `<div class="empty"><h3>Todavía no hay aplicaciones</h3><p>Agregá la primera con su dirección web. Podés pegar varias a la vez y agruparlas por categoría.</p>${S.canEdit ? '<button class="btn btn-primary" data-new>Agregar la primera</button>' : ""}</div>`; return; }
-
+    if (!S.loaded) { main.innerHTML = `<div class="empty"><h3>Cargando tus aplicaciones…</h3><p>Se están trayendo desde apps.json.</p></div>`; return; }
+    if (!apps.length) { main.innerHTML = `<div class="empty"><h3>Todavía no hay aplicaciones</h3><p>Agregá la primera con su dirección web. Podés pegar varias a la vez y agruparlas por categoría.</p><button class="btn btn-primary" data-new>Agregar la primera</button></div>`; return; }
     const list = filtered();
     if (!list.length) { main.innerHTML = `<div class="empty"><h3>Nada coincide con «${esc(S.q)}»</h3><p>Probá con otra palabra o con parte del dominio.</p></div>`; return; }
 
     let html = "";
     if (S.sort === "cat") {
-      const showFav = S.cat === "all" && !S.q;
-      const favs = list.filter(a => a.favorite).sort(byName);
-      if (showFav && favs.length) html += section("Favoritas", favs);
-      const groups = {};
-      list.forEach(a => (groups[a.category || SIN] ||= []).push(a));
-      catNames.filter(c => groups[c]).forEach(c => html += section(c, groups[c].sort(byName), hue(c)));
+      const clean = S.cat === "all" && !S.q;
+      if (clean) {
+        const rec = apps.filter(a => S.opens[a.id]).sort((a, b) => S.opens[b.id] - S.opens[a.id]).slice(0, 6);
+        if (rec.length) html += `<section class="section"><div class="sec-head"><h2>Abiertas hace poco</h2></div><div class="recent">${rec.map(a => { const ic = iconOf(a); return `<a class="rc" style="--c:${catColor(a.category)}" href="${esc(a.url)}" target="_blank" rel="noopener" data-open="${esc(a.id)}"><span class="tile${isEmoji(ic) ? " emoji" : ""}" aria-hidden="true">${esc(ic)}</span><span><b>${esc(a.name)}</b><small>${esc(ago(S.opens[a.id]))}</small></span></a>`; }).join("")}</div></section>`;
+        const favs = list.filter(a => a.favorite).sort(byName);
+        if (favs.length) html += section("Favoritas", favs);
+      }
+      const groups = {}; list.forEach(a => (groups[a.category || SIN] ||= []).push(a));
+      names.filter(c => groups[c]).forEach(c => html += section(c, groups[c].sort(byName), catColor(c === SIN ? "" : c), catCfg(c)?.icon));
     } else {
-      const sorted = [...list].sort(S.sort === "az" ? byName : S.sort === "recent" ? (a, b) => (b.lastOpened || 0) - (a.lastOpened || 0) || byName(a, b) : (a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+      const sorted = [...list].sort(S.sort === "az" ? byName : S.sort === "recent" ? (a, b) => (S.opens[b.id] || 0) - (S.opens[a.id] || 0) || byName(a, b) : (a, b) => (b.createdAt || 0) - (a.createdAt || 0));
       html = section(S.sort === "az" ? "De la A a la Z" : S.sort === "recent" ? "Abiertas hace poco" : "Agregadas hace poco", sorted);
     }
     main.innerHTML = html;
   }
 
-  /* ---------- Modal ---------- */
-  let lastFocus = null, delArmed = false;
+  /* ---------- Modales ---------- */
+  const stack = [];
+  function openOv(id) { const el = $(id); if (!el.hidden) return; stack.push({ el, focus: document.activeElement }); el.hidden = false; $("#menu").open = false; }
+  function closeOv(el) {
+    const i = stack.findIndex(s => s.el === el); if (i < 0) return;
+    const [s] = stack.splice(i, 1); el.hidden = true; el.classList.remove("proj");
+    if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+    s.focus?.focus?.();
+    if (el.id === "ov-app") S.editing = null;
+  }
+  document.querySelectorAll(".ov").forEach(ov => {
+    ov.addEventListener("mousedown", e => { if (e.target === ov) closeOv(ov); });
+    ov.querySelectorAll("[data-close]").forEach(b => b.addEventListener("click", () => closeOv(ov)));
+  });
+
+  /* Alta y edición */
+  let delArmed = false, descAuto = true, metaFor = "", metaTimer, pvTimer;
   function setMode(m) {
     document.querySelectorAll("#m-tabs .tab").forEach(t => t.setAttribute("aria-selected", t.dataset.mode === m));
     $("#f-one").hidden = m !== "one"; $("#f-bulk").hidden = m !== "bulk";
     setTimeout(() => (m === "one" ? $("#f-url") : $("#b-urls")).focus(), 30);
   }
-  function openModal(app) {
-    if (!S.canEdit) return;
-    lastFocus = document.activeElement; S.editing = app || null; delArmed = false;
+  function openApp(app) {
+    if (!canEdit()) { openGh(); return; }
+    S.editing = app || null; delArmed = false;
     $("#m-title").textContent = app ? "Editar aplicación" : "Nueva aplicación";
     $("#m-tabs").hidden = !!app;
     $("#f-url").value = app?.url || ""; $("#f-name").value = app?.name || ""; $("#f-icon").value = app?.icon || "";
     $("#f-cat").value = app?.category || (S.cat !== "all" && S.cat !== "__fav" && S.cat !== SIN ? S.cat : "");
-    $("#f-desc").value = app?.description || ""; $("#f-fav").checked = !!app?.favorite;
-    $("#f-err").textContent = ""; $("#b-err").textContent = ""; $("#b-urls").value = ""; $("#b-cat").value = "";
+    $("#f-desc").value = app?.description || ""; $("#f-fav").checked = !!app?.favorite; $("#f-img").value = app?.image || "";
+    descAuto = !app?.description; $("#d-badge").hidden = true; metaFor = app ? app.url : "";
+    $("#f-err").textContent = ""; delete $("#f-err").dataset.dupOk; $("#b-err").textContent = ""; $("#b-urls").value = ""; $("#b-cat").value = "";
     $("#f-del").hidden = !app; $("#f-del").classList.remove("armed"); $("#f-del").textContent = "Eliminar";
     $("#f-name").dataset.auto = app ? "" : "1";
-    $("#ov").hidden = false; setMode("one"); preview();
+    openOv("#ov-app"); setMode("one"); preview();
   }
-  function closeModal() { $("#ov").hidden = true; S.editing = null; lastFocus?.focus?.(); }
+  function fillAutoDesc() {
+    if (!descAuto) return;
+    const u = normUrl($("#f-url").value); if (!u) return;
+    $("#f-desc").value = autoMeta({ name: $("#f-name").value.trim(), url: u, category: $("#f-cat").value.trim() }).desc;
+    $("#d-badge").textContent = "✨ automática"; $("#d-badge").hidden = false;
+  }
+  function scheduleMeta() {
+    clearTimeout(metaTimer);
+    metaTimer = setTimeout(async () => {
+      const u = normUrl($("#f-url").value); if (!u || u === metaFor) return; metaFor = u;
+      fillAutoDesc();
+      if (!descAuto && $("#f-name").dataset.auto !== "1") return;
+      if (descAuto) { $("#d-badge").textContent = "✨ buscando en el sitio…"; $("#d-badge").hidden = false; }
+      const m = await fetchMeta(u);
+      if (normUrl($("#f-url").value) !== u || $("#ov-app").hidden) return;
+      if (m?.title && $("#f-name").dataset.auto === "1") $("#f-name").value = m.title;
+      if (descAuto) { if (m?.description) $("#f-desc").value = m.description; else fillAutoDesc(); $("#d-badge").textContent = m?.description ? "✨ tomada del sitio" : "✨ automática"; }
+      preview();
+    }, 650);
+  }
   function preview() {
     const name = $("#f-name").value.trim() || "Nombre de la app";
-    const url = normUrl($("#f-url").value) || "https://…";
-    const ic = $("#f-icon").value.trim() || initials(name);
-    const c = hue($("#f-cat").value.trim() || SIN);
-    $("#f-prev").style.setProperty("--c", c);
-    $("#f-prev").innerHTML = `<span class="tile${isEmoji(ic) ? " emoji" : ""}" style="--c:${c}">${esc(ic)}</span><span class="meta" style="padding:0"><span class="name">${esc(name)}</span><span class="host">${esc(hostOf(url))}</span></span>`;
+    const realUrl = normUrl($("#f-url").value);
+    const cat = $("#f-cat").value.trim();
+    const ic = $("#f-icon").value.trim() || autoMeta({ name, url: realUrl || "", category: cat }).emoji || (cat && catCfg(cat)?.icon) || initials(name);
+    const c = catColor(cat);
+    const custom = normUrl($("#f-img").value);
+    const img = custom || (realUrl ? shotUrl(realUrl) : "");
+    $("#f-prev").innerHTML = `<span class="tile${isEmoji(ic) ? " emoji" : ""}" style="--c:${c}">${esc(ic)}</span><span class="meta"><span class="name">${esc(name)}</span><span class="host">${esc(realUrl ? hostOf(realUrl) : "https://…")}</span></span>${img ? `<span class="pv-cover cover" style="--c:${c}"><img src="${esc(img)}" alt="Vista previa" referrerpolicy="no-referrer" data-shot="${custom ? 0 : 1}"></span>` : ""}`;
   }
-  $("#f-url").addEventListener("input", () => { const u = normUrl($("#f-url").value); if ($("#f-name").dataset.auto === "1" && u) $("#f-name").value = nameFromUrl(u); preview(); });
-  $("#f-name").addEventListener("input", () => { $("#f-name").dataset.auto = ""; preview(); });
-  ["#f-icon", "#f-cat"].forEach(s => $(s).addEventListener("input", preview));
+  const previewSoon = () => { clearTimeout(pvTimer); pvTimer = setTimeout(preview, 450); };
+  $("#f-url").addEventListener("input", () => { const u = normUrl($("#f-url").value); if ($("#f-name").dataset.auto === "1" && u) $("#f-name").value = nameFromUrl(u); fillAutoDesc(); previewSoon(); scheduleMeta(); });
+  $("#f-name").addEventListener("input", () => { $("#f-name").dataset.auto = ""; fillAutoDesc(); previewSoon(); });
+  $("#f-cat").addEventListener("input", () => { fillAutoDesc(); previewSoon(); });
+  $("#f-icon").addEventListener("input", previewSoon);
+  $("#f-img").addEventListener("input", previewSoon);
+  $("#f-desc").addEventListener("input", () => { descAuto = !$("#f-desc").value.trim(); $("#d-badge").hidden = true; });
+  document.querySelectorAll("#m-tabs .tab").forEach(t => t.addEventListener("click", () => setMode(t.dataset.mode)));
 
-  $("#f-one").addEventListener("submit", async e => {
+  $("#f-one").addEventListener("submit", e => {
     e.preventDefault();
     const url = normUrl($("#f-url").value), name = $("#f-name").value.trim();
-    if (!url) { $("#f-err").textContent = "Escribí una dirección válida, por ejemplo https://mi-app.netlify.app"; $("#f-url").focus(); return; }
+    if (!url) { $("#f-err").textContent = "Escribí una dirección válida, por ejemplo https://adelvalle2010.github.io/mi-app/"; $("#f-url").focus(); return; }
     if (!name) { $("#f-err").textContent = "Poné un nombre para reconocerla en la grilla."; $("#f-name").focus(); return; }
-    const dup = S.apps.find(a => a.url.replace(/\/$/, "") === url.replace(/\/$/, "") && a.id !== S.editing?.id);
+    const editing = S.editing;
+    const dup = S.data.apps.find(a => sameUrl(a.url, url) && a.id !== editing?.id);
     if (dup && !$("#f-err").dataset.dupOk) { $("#f-err").textContent = `Esa dirección ya está guardada como «${dup.name}». Tocá Guardar de nuevo si querés duplicarla.`; $("#f-err").dataset.dupOk = "1"; return; }
-    delete $("#f-err").dataset.dupOk;
-    const data = { name, url, icon: $("#f-icon").value.trim(), category: $("#f-cat").value.trim(), description: $("#f-desc").value.trim(), favorite: $("#f-fav").checked };
-    $("#f-save").disabled = true;
-    try {
-      if (S.editing) { await S.db.doc("apps/" + S.editing.id).update(data); toast("Cambios guardados"); }
-      else { await S.db.collection("apps").add({ ...data, createdAt: Date.now(), lastOpened: 0 }); toast("«" + name + "» agregada"); }
-      closeModal();
-    } catch (err) { $("#f-err").textContent = writeErr(err); }
-    finally { $("#f-save").disabled = false; }
+    const fields = { name, url, icon: $("#f-icon").value.trim(), category: $("#f-cat").value.trim(), description: $("#f-desc").value.trim(), image: normUrl($("#f-img").value) || "", favorite: $("#f-fav").checked };
+    if (editing) {
+      const id = editing.id;
+      commit(`Lanzadera: editar «${name}»`, d => { const a = d.apps.find(x => x.id === id); if (a) Object.assign(a, fields); return d; }).then(() => toast("Cambios guardados en GitHub"), () => {});
+    } else {
+      const app = Object.assign({ id: uid(), createdAt: Date.now() }, fields);
+      commit(`Lanzadera: agregar «${name}»`, d => { if (!d.apps.some(x => x.id === app.id)) d.apps.push(app); return d; }).then(() => toast("«" + name + "» guardada en GitHub"), () => {});
+    }
+    closeOv($("#ov-app"));
   });
-
-  $("#f-del").addEventListener("click", async () => {
+  $("#f-del").addEventListener("click", () => {
     if (!delArmed) { delArmed = true; $("#f-del").classList.add("armed"); $("#f-del").textContent = "Confirmar: eliminar"; return; }
-    try { const n = S.editing.name; await S.db.doc("apps/" + S.editing.id).delete(); toast("«" + n + "» eliminada"); closeModal(); }
-    catch (err) { $("#f-err").textContent = writeErr(err); }
+    const { id, name } = S.editing;
+    commit(`Lanzadera: eliminar «${name}»`, d => { d.apps = d.apps.filter(x => x.id !== id); return d; }).then(() => toast("«" + name + "» eliminada"), () => {});
+    closeOv($("#ov-app"));
   });
-
-  $("#f-bulk").addEventListener("submit", async e => {
+  $("#f-bulk").addEventListener("submit", e => {
     e.preventDefault();
     const lines = $("#b-urls").value.split(/\n+/).map(l => l.trim()).filter(Boolean);
     const cat = $("#b-cat").value.trim();
@@ -385,120 +827,226 @@ textarea.mono{font-family:var(--f-mono);font-size:13px;min-height:160px}
     for (const l of lines) {
       const parts = l.split("|"); const raw = parts.length > 1 ? parts.slice(1).join("|") : parts[0];
       const url = normUrl(raw); if (!url) { bad.push(l); continue; }
-      const name = parts.length > 1 && parts[0].trim() ? parts[0].trim() : nameFromUrl(url);
-      if (S.apps.some(a => a.url.replace(/\/$/, "") === url.replace(/\/$/, "")) || items.some(i => i.url === url)) continue;
-      items.push({ name, url, icon: "", category: cat, description: "", favorite: false });
+      const named = parts.length > 1 && !!parts[0].trim();
+      if (S.data.apps.some(a => sameUrl(a.url, url)) || items.some(i => sameUrl(i.url, url))) continue;
+      items.push({ id: uid(), name: named ? parts[0].trim() : nameFromUrl(url), url, icon: "", category: cat, description: "", image: "", favorite: false, createdAt: Date.now() + items.length, _auto: !named });
     }
     if (bad.length) { $("#b-err").textContent = "Revisá estas líneas, no parecen direcciones: " + bad.slice(0, 3).join(" · "); return; }
     if (!items.length) { $("#b-err").textContent = lines.length ? "Todas esas direcciones ya estaban guardadas." : "Pegá al menos una dirección."; return; }
-    $("#b-save").disabled = true;
-    let ok = 0;
-    try { for (const it of items) { await S.db.collection("apps").add({ ...it, createdAt: Date.now() + ok, lastOpened: 0 }); ok++; } toast(ok + (ok === 1 ? " app agregada" : " apps agregadas")); closeModal(); }
-    catch (err) { $("#b-err").textContent = `Se agregaron ${ok} de ${items.length}. ` + writeErr(err); }
-    finally { $("#b-save").disabled = false; }
+    const autoIds = items.filter(i => i._auto).map(i => i.id); items.forEach(i => delete i._auto);
+    commit(`Lanzadera: agregar ${items.length} apps`, d => { items.forEach(it => { if (!d.apps.some(x => x.id === it.id)) d.apps.push(clone(it)); }); return d; })
+      .then(() => { toast(items.length + (items.length === 1 ? " app agregada" : " apps agregadas") + " · buscando descripciones…"); enrich(items.map(i => i.id), autoIds); }, () => {});
+    closeOv($("#ov-app"));
   });
 
-  function writeErr(err) {
-    if (err?.code === "invalid_argument") { S.canEdit = false; render(); return "No tenés permiso para editar esta lista."; }
-    if (err?.code === "quota_exceeded") return "La lista llegó al límite de espacio. Eliminá algunas apps viejas.";
-    return "No se pudo guardar. Revisá la conexión y probá de nuevo.";
+  /* Completar info */
+  let enriching = false;
+  async function enrich(ids, renameIds = []) {
+    if (enriching || !ids.length) return 0; enriching = true;
+    const patches = {};
+    for (const id of ids) {
+      const a = S.data.apps.find(x => x.id === id); if (!a || a.description) continue;
+      const m = await fetchMeta(a.url); if (!m) continue;
+      const p = {}; if (m.description) p.description = m.description; if (m.title && renameIds.includes(id)) p.name = m.title;
+      if (Object.keys(p).length) patches[id] = p;
+    }
+    enriching = false;
+    const n = Object.keys(patches).length;
+    if (n) await commit(`Lanzadera: completar descripción de ${n} apps`, d => { d.apps.forEach(a => { if (patches[a.id] && !a.description) Object.assign(a, patches[a.id]); }); return d; }).catch(() => {});
+    return n;
   }
+  $("#m-enrich").addEventListener("click", async () => {
+    $("#menu").open = false;
+    if (!canEdit()) { openGh(); return; }
+    const ids = S.data.apps.filter(a => !a.description).map(a => a.id);
+    if (!ids.length) { toast("Todas las apps ya tienen descripción"); return; }
+    toast("Buscando la descripción de " + ids.length + " apps…");
+    const n = await enrich(ids);
+    toast(n ? n + " descripciones tomadas de los sitios" : "Esos sitios no tienen descripción propia; se sigue mostrando la automática");
+  });
 
-  /* ---------- Eventos ---------- */
-  document.addEventListener("click", async e => {
-    const t = e.target.closest("[data-cat],[data-fav],[data-edit],[data-open],[data-new]");
+  /* Conectar GitHub */
+  function openGh() {
+    const c = ghCfg();
+    $("#gh-token").value = ""; $("#gh-token").placeholder = S.gh?.token ? "•••••••• (guardado). Pegá otro para reemplazarlo" : "github_pat_…";
+    $("#gh-repo").value = c.owner + "/" + c.repo; $("#gh-branch").value = c.branch;
+    $("#gh-off").hidden = !S.gh?.token; $("#gh-err").textContent = S.sync === "error" ? S.syncMsg : "";
+    $("#gh-save").textContent = S.gh?.token ? "Guardar" : "Conectar";
+    openOv("#ov-gh"); setTimeout(() => $("#gh-token").focus(), 30);
+  }
+  $("#f-gh").addEventListener("submit", async e => {
+    e.preventDefault();
+    const token = $("#gh-token").value.trim() || S.gh?.token || "";
+    const [owner, repo] = $("#gh-repo").value.trim().split("/").map(s => s && s.trim());
+    const branch = $("#gh-branch").value.trim() || "main";
+    if (!token) { $("#gh-err").textContent = "Pegá el token que generaste en GitHub."; return; }
+    if (!owner || !repo) { $("#gh-err").textContent = "Escribí el repositorio como usuario/repositorio, por ejemplo adelvalle2010/lanzador."; return; }
+    const prev = S.gh;
+    S.gh = { token, owner, repo, branch, path: DEF_GH.path };
+    $("#gh-save").disabled = true; $("#gh-err").textContent = "";
+    try {
+      const cur = await ghGet();
+      S.data = cur.data; S.sha = cur.sha; S.ghOk = true; S.source = "github";
+      LS.set("lz-gh", S.gh); cacheSave(); setSync("ok"); render();
+      closeOv($("#ov-gh")); toast("Conectado: los cambios se guardan en GitHub");
+    } catch (err) { S.gh = prev; $("#gh-err").textContent = ghErr(err); }
+    finally { $("#gh-save").disabled = false; }
+  });
+  $("#gh-off").addEventListener("click", () => {
+    S.gh = null; S.ghOk = false; LS.del("lz-gh"); setSync("ro"); render();
+    closeOv($("#ov-gh")); toast("Desconectado: este navegador queda en modo lectura");
+  });
+  $("#sync").addEventListener("click", openGh);
+  $("#m-gh").addEventListener("click", openGh);
+
+  /* Categorías */
+  let catDraft = [];
+  function openCats() {
+    if (!canEdit()) { openGh(); return; }
+    const counts = {}; S.data.apps.forEach(a => { if (a.category) counts[a.category] = (counts[a.category] || 0) + 1; });
+    catDraft = catList().filter(n => n !== SIN).map(n => ({ orig: n, name: n, icon: catCfg(n)?.icon || "", color: catColorN(n), count: counts[n] || 0, del: false, armed: false }));
+    $("#cat-err").textContent = ""; $("#cat-new").value = "";
+    drawCats(); openOv("#ov-cats");
+  }
+  function drawCats() {
+    $("#cat-rows").innerHTML = catDraft.map((c, i) => c.del ? "" : `<div class="cat-row" data-i="${i}" style="--c:var(--c${c.color})">
+      <div class="ord"><button type="button" data-up="${i}" aria-label="Subir" ${i === 0 ? "disabled" : ""}>▲</button><button type="button" data-down="${i}" aria-label="Bajar">▼</button></div>
+      <input class="inp ic" data-icon="${i}" value="${esc(c.icon)}" maxlength="4" placeholder="🏷️" aria-label="Ícono de la categoría">
+      <input class="inp" data-name="${i}" value="${esc(c.name)}" maxlength="40" aria-label="Nombre de la categoría">
+      <button type="button" class="del${c.armed ? " armed" : ""}" data-del="${i}" title="${c.armed ? "Tocá de nuevo para borrar" : "Borrar categoría"}" aria-label="Borrar categoría">${c.armed ? "✓" : "🗑"}</button>
+      <div class="sw">${[1, 2, 3, 4, 5, 6].map(n => `<button type="button" style="--c:var(--c${n})" data-color="${i}:${n}" aria-pressed="${c.color === n}" aria-label="Color ${n}"></button>`).join("")}<span>${c.count} ${c.count === 1 ? "app" : "apps"}</span></div>
+    </div>`).join("") || `<p class="note">No hay categorías todavía.</p>`;
+  }
+  $("#cat-rows").addEventListener("input", e => {
+    const t = e.target;
+    if (t.dataset.name) catDraft[+t.dataset.name].name = t.value;
+    if (t.dataset.icon) catDraft[+t.dataset.icon].icon = t.value;
+  });
+  $("#cat-rows").addEventListener("click", e => {
+    const t = e.target.closest("button"); if (!t) return;
+    const live = catDraft.map((c, i) => i).filter(i => !catDraft[i].del);
+    if (t.dataset.up || t.dataset.down) {
+      const i = +(t.dataset.up || t.dataset.down); const p = live.indexOf(i); const q = t.dataset.up ? p - 1 : p + 1;
+      if (q < 0 || q >= live.length) return; const j = live[q]; [catDraft[i], catDraft[j]] = [catDraft[j], catDraft[i]]; drawCats(); return;
+    }
+    if (t.dataset.color) { const [i, n] = t.dataset.color.split(":").map(Number); catDraft[i].color = n; drawCats(); return; }
+    if (t.dataset.del) { const c = catDraft[+t.dataset.del]; if (c.armed || !c.count) c.del = true; else c.armed = true; drawCats(); }
+  });
+  $("#cat-add").addEventListener("click", () => {
+    const n = $("#cat-new").value.trim(); if (!n) return;
+    if (n === SIN || catDraft.some(c => !c.del && c.name.trim().toLowerCase() === n.toLowerCase())) { $("#cat-err").textContent = "Ya existe una categoría con ese nombre."; return; }
+    catDraft.push({ orig: null, name: n, icon: "", color: hashHue(n), count: 0, del: false, armed: false });
+    $("#cat-new").value = ""; $("#cat-err").textContent = ""; drawCats();
+  });
+  $("#cat-new").addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); $("#cat-add").click(); } });
+  $("#cat-save").addEventListener("click", () => {
+    const live = catDraft.filter(c => !c.del).map(c => Object.assign(c, { name: c.name.trim() }));
+    if (live.some(c => !c.name || c.name === SIN)) { $("#cat-err").textContent = "Cada categoría necesita un nombre."; return; }
+    const lower = live.map(c => c.name.toLowerCase());
+    if (new Set(lower).size !== lower.length) { $("#cat-err").textContent = "Hay dos categorías con el mismo nombre."; return; }
+    const renames = {}, removed = new Set(catDraft.filter(c => c.del && c.orig).map(c => c.orig));
+    live.forEach(c => { if (c.orig && c.orig !== c.name) renames[c.orig] = c.name; });
+    const cfg = {}; live.forEach((c, i) => { cfg[c.name] = { color: c.color, icon: c.icon.trim(), order: i }; });
+    commit("Lanzadera: actualizar categorías", d => {
+      d.apps.forEach(a => { if (removed.has(a.category)) a.category = ""; else if (renames[a.category]) a.category = renames[a.category]; });
+      d.categories = cfg; return d;
+    }).then(() => toast("Categorías guardadas"), () => {});
+    if (renames[S.cat]) S.cat = renames[S.cat];
+    closeOv($("#ov-cats"));
+  });
+  $("#m-cats").addEventListener("click", openCats);
+
+  /* Compartir con QR */
+  let qrLib = null;
+  function loadQr() {
+    if (window.QRCode) return Promise.resolve();
+    if (qrLib) return qrLib;
+    qrLib = new Promise((res, rej) => { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"; s.onload = res; s.onerror = rej; document.head.appendChild(s); });
+    return qrLib;
+  }
+  async function openShare(title, url) {
+    $("#s-title").textContent = title; $("#s-url").textContent = url; $("#s-open").href = url;
+    const box = $("#s-qr"); box.innerHTML = '<span style="display:block;width:220px;height:220px;line-height:220px;color:#5A6478">Generando QR…</span>';
+    openOv("#ov-share");
+    try { await loadQr(); box.innerHTML = ""; new QRCode(box, { text: url, width: 600, height: 600, colorDark: "#131A28", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M }); }
+    catch (e) { box.innerHTML = '<span style="display:block;width:220px;padding:20px;line-height:1.4;color:#5A6478">No se pudo generar el QR sin conexión. Usá «Copiar enlace».</span>'; }
+  }
+  $("#s-copy").addEventListener("click", async () => { toast(await copyText($("#s-url").textContent) ? "Enlace copiado" : "Seleccioná el enlace y copialo a mano"); });
+  $("#s-proj").addEventListener("click", () => { const ov = $("#ov-share"); ov.classList.add("proj"); ov.requestFullscreen?.().catch(() => {}); });
+  $("#ov-share").addEventListener("click", e => { const ov = $("#ov-share"); if (ov.classList.contains("proj") && !e.target.closest("a,button")) { ov.classList.remove("proj"); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); } });
+  $("#share-hub").addEventListener("click", () => openShare("Lanzadera · Prof. Andrés del Valle", SITE));
+
+  /* Exportar / Importar */
+  $("#m-exp").addEventListener("click", () => {
+    $("#menu").open = false;
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([serialize(S.data)], { type: "application/json" }));
+    a.download = "apps.json"; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+    toast("apps.json descargado");
+  });
+  $("#m-imp").addEventListener("click", () => { $("#menu").open = false; if (!canEdit()) { openGh(); return; } $("#imp-file").click(); });
+  $("#imp-file").addEventListener("change", async e => {
+    const f = e.target.files[0]; e.target.value = ""; if (!f) return;
+    let inc; try { inc = normalize(JSON.parse(await f.text())); } catch (err) { toast("Ese archivo no es una lista de apps válida"); return; }
+    const fresh = inc.apps.filter(a => normUrl(a.url) && !S.data.apps.some(x => sameUrl(x.url, a.url)));
+    if (!fresh.length) { toast("No había apps nuevas en ese archivo"); return; }
+    fresh.forEach((a, i) => { a.id = uid() + i; a.createdAt = a.createdAt || Date.now() + i; });
+    commit(`Lanzadera: importar ${fresh.length} apps`, d => {
+      fresh.forEach(a => { if (!d.apps.some(x => sameUrl(x.url, a.url))) d.apps.push(clone(a)); });
+      for (const [k, v] of Object.entries(inc.categories)) if (!d.categories[k]) d.categories[k] = v;
+      return d;
+    }).then(() => toast(fresh.length + " apps importadas"), () => {});
+  });
+
+  /* Tema */
+  const THEMES = ["system", "light", "dark"];
+  function applyTheme(t) {
+    if (t === "system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.dataset.theme = t;
+    $("#theme").innerHTML = t === "light" ? ICON.sun : t === "dark" ? ICON.moon : ICON.auto;
+    $("#theme").title = "Tema: " + (t === "light" ? "claro" : t === "dark" ? "oscuro" : "automático");
+  }
+  let theme = LS.get("lz-theme", "system"); applyTheme(theme);
+  $("#theme").addEventListener("click", () => { theme = THEMES[(THEMES.indexOf(theme) + 1) % 3]; LS.set("lz-theme", theme); applyTheme(theme); toast($("#theme").title); });
+
+  /* ---------- Eventos generales ---------- */
+  document.addEventListener("click", e => {
+    if (!e.target.closest("#menu")) $("#menu").open = false;
+    const t = e.target.closest("[data-cat],[data-fav],[data-edit],[data-open],[data-new],[data-copy],[data-share]");
     if (!t) return;
     if (t.dataset.cat !== undefined) { S.cat = t.dataset.cat; render(); return; }
-    if (t.dataset.new !== undefined) { openModal(); return; }
-    if (t.dataset.edit) { openModal(S.apps.find(a => a.id === t.dataset.edit)); return; }
-    if (t.dataset.fav && S.canEdit) {
-      const a = S.apps.find(x => x.id === t.dataset.fav); if (!a) return;
-      try { await S.db.doc("apps/" + a.id).update({ favorite: !a.favorite }); toast(a.favorite ? "Quitada de favoritas" : "Agregada a favoritas"); } catch (err) { toast(writeErr(err)); }
+    if (t.dataset.new !== undefined) { openApp(); return; }
+    const find = id => S.data.apps.find(a => a.id === id);
+    if (t.dataset.edit) { const a = find(t.dataset.edit); if (a) openApp(a); return; }
+    if (t.dataset.copy) { const a = find(t.dataset.copy); if (a) copyText(a.url).then(ok => toast(ok ? "Enlace copiado: " + a.name : "No se pudo copiar")); return; }
+    if (t.dataset.share) { const a = find(t.dataset.share); if (a) openShare(a.name, a.url); return; }
+    if (t.dataset.fav) {
+      const a = find(t.dataset.fav); if (!a) return; const id = a.id, on = !a.favorite;
+      commit(`Lanzadera: ${on ? "marcar" : "desmarcar"} favorita «${a.name}»`, d => { const x = d.apps.find(y => y.id === id); if (x) x.favorite = on; return d; }).then(() => toast(on ? "Agregada a favoritas" : "Quitada de favoritas"), () => {});
       return;
     }
-    if (t.dataset.open && S.canEdit && S.db) { S.db.doc("apps/" + t.dataset.open).update({ lastOpened: Date.now() }).catch(() => {}); }
+    if (t.dataset.open) { S.opens[t.dataset.open] = Date.now(); LS.set("lz-opens", S.opens); setTimeout(render, 300); }
   });
-  $("#add").addEventListener("click", () => openModal());
-  $("#m-close").addEventListener("click", closeModal);
-  $("#f-cancel").addEventListener("click", closeModal);
-  $("#b-cancel").addEventListener("click", closeModal);
-  $("#ov").addEventListener("mousedown", e => { if (e.target.id === "ov") closeModal(); });
-  document.querySelectorAll("#m-tabs .tab").forEach(t => t.addEventListener("click", () => setMode(t.dataset.mode)));
+  $("#add").addEventListener("click", () => openApp());
   let qt; $("#q").addEventListener("input", e => { clearTimeout(qt); qt = setTimeout(() => { S.q = e.target.value; render(); }, 80); });
-  $("#sort").addEventListener("change", e => { S.sort = e.target.value; try { localStorage.setItem("lz-sort", S.sort); } catch (x) {} render(); });
-  const setView = v => { S.view = v; try { localStorage.setItem("lz-view", v); } catch (x) {} render(); };
+  $("#q").addEventListener("keydown", e => {
+    if (e.key === "Enter") { const first = $("#main .card > a"); if (first) { e.preventDefault(); first.click(); } }
+  });
+  $("#sort").addEventListener("change", e => { S.sort = e.target.value; LS.set("lz-sort", S.sort); render(); });
+  const setView = v => { S.view = v; LS.set("lz-view", v); render(); };
   $("#v-grid").addEventListener("click", () => setView("grid"));
   $("#v-list").addEventListener("click", () => setView("list"));
   document.addEventListener("keydown", e => {
-    if (!$("#ov").hidden) { if (e.key === "Escape") closeModal(); return; }
+    if (stack.length) { if (e.key === "Escape") closeOv(stack[stack.length - 1].el); return; }
     const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName);
     if (e.key === "/" && !typing) { e.preventDefault(); $("#q").focus(); }
-    else if ((e.key === "n" || e.key === "N") && !typing && !e.metaKey && !e.ctrlKey && S.canEdit) { e.preventDefault(); openModal(); }
+    else if ((e.key === "n" || e.key === "N") && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); openApp(); }
     else if (e.key === "Escape" && document.activeElement === $("#q")) { $("#q").value = ""; S.q = ""; render(); $("#q").blur(); }
   });
+  window.addEventListener("storage", e => { if (e.key === "lz-gh") { S.gh = LS.get("lz-gh", null); load(); } });
 
-  /* ---------- Datos: apps.json + cambios guardados en este navegador ---------- */
-  const KEY = "lz-apps-v1";
-  const LS = { get() { try { const v = localStorage.getItem(KEY); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
-               set(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} },
-               clear() { try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_DEL); } catch (e) {} } };
-  /* Apps que se borraron en este navegador, para no volver a sumarlas desde apps.json */
-  const KEY_DEL = "lz-borradas-v1";
-  const borradas = { get() { try { return JSON.parse(localStorage.getItem(KEY_DEL) || "[]"); } catch (e) { return []; } },
-                     add(id) { try { const b = borradas.get(); if (!b.includes(id)) { b.push(id); localStorage.setItem(KEY_DEL, JSON.stringify(b)); } } catch (e) {} } };
-  let rows = [], listeners = [], dirty = false;
-  const snap = () => ({ docs: rows.map(r => { const { id, ...d } = r; return { id, exists: true, data: () => d }; }) });
-  const emit = () => listeners.forEach(cb => cb(snap()));
-  const commit = () => { dirty = true; LS.set(rows); emit(); };
-  const slug = s => (String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "app") + "-" + Date.now().toString(36);
-  const localDb = {
-    collection: () => ({
-      add: async d => { rows.push({ id: slug(d.name), ...d }); commit(); },
-      onSnapshot: cb => { listeners.push(cb); cb(snap()); }
-    }),
-    doc: path => { const id = path.split("/")[1]; return {
-      update: async d => { const r = rows.find(x => x.id === id); if (r) { Object.assign(r, d); if (Object.keys(d).length === 1 && "lastOpened" in d) { LS.set(rows); emit(); } else commit(); } },
-      delete: async () => { rows = rows.filter(x => x.id !== id); borradas.add(id); commit(); }
-    }; }
-  };
-  async function fromFile() {
-    try { const r = await fetch("apps.json", { cache: "no-store" }); if (!r.ok) throw 0; return await r.json(); }
-    catch (e) { return null; }
-  }
-
-  $("#exp").addEventListener("click", () => {
-    const clean = rows.map(({ lastOpened, ...r }) => r);
-    const blob = new Blob([JSON.stringify(clean, null, 2)], { type: "application/json" });
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "apps.json"; a.click();
-    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-    toast("apps.json descargado: subilo al repositorio para que los cambios queden para todos");
-  });
-  $("#rst").addEventListener("click", async () => {
-    if (!confirm("¿Descartar los cambios hechos en este navegador y volver a la lista de apps.json?")) return;
-    const f = await fromFile(); if (!f) { toast("No se encontró apps.json"); return; }
-    LS.clear(); rows = f; emit(); toast("Lista restaurada desde apps.json");
-  });
-
-  render();
-  (async () => {
-    const saved = LS.get();
-    const file = await fromFile();
-    let base = saved || file || [];
-    if (saved && file) {
-      // Suma las apps nuevas de apps.json que este navegador todavía no tiene
-      const tengo = new Set(saved.map(r => r.id)), fuera = new Set(borradas.get());
-      const nuevas = file.filter(r => !tengo.has(r.id) && !fuera.has(r.id));
-      if (nuevas.length) { base = saved.concat(nuevas); LS.set(base); }
-    }
-    rows = base;
-    S.db = localDb; S.canEdit = true; $("#add").hidden = false;
-    localDb.collection("apps").onSnapshot(s => {
-      S.apps = s.docs.map(d => ({ id: d.id, ...d.data() }));
-      S.loaded = true; render();
-      const st = $("#stat"); if (saved || dirty) st.textContent += " · cambios guardados en este navegador";
-    });
-  })();
+  setSync("ro"); render(); load();
 })();
 </script>
-
-</body></html>
+</body>
+</html>
