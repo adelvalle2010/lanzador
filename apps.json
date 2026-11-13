@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:18:58+00:00",
+  "updated": "2026-11-13T01:34:05.475Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -41,9 +41,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000010,
-      "image": ""
+      "createdAt": 1761440000010
     },
     {
       "id": "actividad-guiada-doget",
@@ -52,9 +52,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000009,
-      "image": ""
+      "createdAt": 1761440000009
     },
     {
       "id": "aprende-ajedrez-desde-0",
@@ -63,9 +63,9 @@
       "icon": "",
       "category": "Ajedrez",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000004,
-      "image": ""
+      "createdAt": 1761440000004
     },
     {
       "id": "arreglos-webquest-7",
@@ -74,9 +74,9 @@
       "icon": "",
       "category": "Programación",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000017,
-      "image": ""
+      "createdAt": 1761440000017
     },
     {
       "id": "arreglos-webquest-andres",
@@ -85,9 +85,9 @@
       "icon": "",
       "category": "Programación",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000016,
-      "image": ""
+      "createdAt": 1761440000016
     },
     {
       "id": "base-de-datos-conexion",
@@ -96,9 +96,9 @@
       "icon": "",
       "category": "Base de datos",
       "description": "Cómo una aplicación web Java se conecta a MySQL: del formulario a la tabla.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000001,
-      "image": ""
+      "createdAt": 1761440000001
     },
     {
       "id": "base-de-datos-mysql",
@@ -107,9 +107,9 @@
       "icon": "🗄️",
       "category": "Base de datos",
       "description": "Curso de 15 módulos con el caso BiblioUTU, para 2.º BT Informática.",
+      "image": "",
       "favorite": true,
-      "createdAt": 1761440000000,
-      "image": ""
+      "createdAt": 1761440000000
     },
     {
       "id": "comunicacion-animada",
@@ -118,9 +118,9 @@
       "icon": "",
       "category": "",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000018,
-      "image": ""
+      "createdAt": 1761440000018
     },
     {
       "id": "cuestionario-servlets",
@@ -129,9 +129,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000014,
-      "image": ""
+      "createdAt": 1761440000014
     },
     {
       "id": "definicion-de-servlets",
@@ -140,9 +140,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000007,
-      "image": ""
+      "createdAt": 1761440000007
     },
     {
       "id": "doget",
@@ -151,9 +151,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000008,
-      "image": ""
+      "createdAt": 1761440000008
     },
     {
       "id": "ejercicios-jsp",
@@ -162,9 +162,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000012,
-      "image": ""
+      "createdAt": 1761440000012
     },
     {
       "id": "escaques-curso-ajedrez",
@@ -173,9 +173,9 @@
       "icon": "♞",
       "category": "Ajedrez",
       "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
+      "image": "",
       "favorite": true,
-      "createdAt": 1761440000003,
-      "image": ""
+      "createdAt": 1761440000003
     },
     {
       "id": "historieta-ciclo-jsp",
@@ -184,9 +184,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000013,
-      "image": ""
+      "createdAt": 1761440000013
     },
     {
       "id": "introduccion-html-5",
@@ -195,9 +195,9 @@
       "icon": "",
       "category": "Diseño Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000015,
-      "image": ""
+      "createdAt": 1761440000015
     },
     {
       "id": "normas-apa",
@@ -206,9 +206,9 @@
       "icon": "📚",
       "category": "Herramientas",
       "description": "Citas, referencias y bibliografía en APA 7.ª edición.",
-      "favorite": true,
-      "createdAt": 1761440000005,
-      "image": ""
+      "image": "",
+      "favorite": false,
+      "createdAt": 1761440000005
     },
     {
       "id": "scriptlets-vs-el-jstl",
@@ -217,9 +217,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000011,
-      "image": ""
+      "createdAt": 1761440000011
     },
     {
       "id": "sga-documentacion",
@@ -228,9 +228,9 @@
       "icon": "",
       "category": "Base de datos",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Documentación del Sistema de Gestión Académica (Java Swing + MySQL).",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000002,
-      "image": ""
+      "createdAt": 1761440000002
     },
     {
       "id": "simulador-http",
@@ -239,9 +239,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Simulador del protocolo HTTP: peticiones y respuestas.",
+      "image": "",
       "favorite": true,
-      "createdAt": 1761440000006,
-      "image": ""
+      "createdAt": 1761440000006
     },
     {
       "id": "ultrasonido",
@@ -250,9 +250,9 @@
       "icon": "",
       "category": "",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1761440000019,
-      "image": ""
+      "createdAt": 1761440000019
     },
     {
       "id": "simulacion-dao-jdbc",
@@ -261,9 +261,9 @@
       "icon": "",
       "category": "Java Web",
       "description": "Simulación animada del recorrido Servlet → DAO → JDBC → MySQL (getLista).",
+      "image": "",
       "favorite": false,
-      "createdAt": 1793844943876,
-      "image": ""
+      "createdAt": 1793844943876
     },
     {
       "id": "curso-html-y-mas",
@@ -272,9 +272,9 @@
       "icon": "",
       "category": "Diseño Web",
       "description": "",
+      "image": "",
       "favorite": false,
-      "createdAt": 1793845004335,
-      "image": ""
+      "createdAt": 1793845004335
     },
     {
       "id": "curso-latex",
@@ -283,9 +283,9 @@
       "icon": "",
       "category": "Herramientas",
       "description": "Mini curso de LaTeX en 15 módulos, con material en PDF.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1793846944335,
-      "image": ""
+      "createdAt": 1793846944335
     },
     {
       "id": "inner-join",
@@ -294,9 +294,9 @@
       "icon": "",
       "category": "Base de datos",
       "description": "Lección interactiva: JOIN de 2 y 3 tablas, herencia Persona → Alumno, MER, MR, físico y SQL.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1793897892367,
-      "image": ""
+      "createdAt": 1793897892367
     },
     {
       "id": "apuntes-java",
@@ -305,9 +305,9 @@
       "icon": "☕",
       "category": "Programación",
       "description": "19 láminas de Java, de lo básico a lo avanzado, con diagramas, pasos animados, glosario y autoevaluación. Programación I, 2.º BT.",
+      "image": "",
       "favorite": false,
-      "createdAt": 1793982600236,
-      "image": ""
+      "createdAt": 1793982600236
     }
   ]
 }
