@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T02:13:24.369Z",
+  "updated": "2026-11-13T02:15:59.533Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -564,14 +564,14 @@
     },
     {
       "id": "mweceic9g2m9",
-      "createdAt": 1794536003673,
       "name": "Libreta de Clase GitHub",
       "url": "https://adelvalle2010.github.io/carpeta-clase/",
       "icon": "",
       "category": "",
       "description": "Recurso para registrar asistencia, actividades y notas.",
       "image": "",
-      "favorite": false
+      "favorite": true,
+      "createdAt": 1794536003673
     }
   ]
 }
