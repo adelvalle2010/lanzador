@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:36:41.218Z",
+  "updated": "2026-11-13T01:38:08.385Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -311,14 +311,25 @@
     },
     {
       "id": "mweb3ad75396",
-      "createdAt": 1794533800507,
       "name": "Wiki - Github",
       "url": "https://github.com/adelvalle2010/conexion-base-de-datos/wiki/",
       "icon": "",
       "category": "Base de datos",
       "description": "Wiki Curso Completo de Base de Datos - Recurso sobre cómo conectar una aplicación a una base de datos.",
       "image": "",
-      "favorite": true
+      "favorite": true,
+      "createdAt": 1794533800507
+    },
+    {
+      "id": "mweb55li5kiz",
+      "createdAt": 1794533887638,
+      "name": "Notas de Base de Datos - Github",
+      "url": "https://github.com/rb-one/Notas-fundamentos-bases-de-datos/blob/master/Notas/notas.md",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "Recurso sobre bases de datos y consultas SQL.",
+      "image": "",
+      "favorite": false
     }
   ]
 }
