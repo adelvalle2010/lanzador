@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:34:25.993Z",
+  "updated": "2026-11-13T01:34:31.412Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -240,7 +240,7 @@
       "category": "Java Web",
       "description": "⚠ Sin publicar: el sitio estaba en Netlify y no se encontró el original. Simulador del protocolo HTTP: peticiones y respuestas.",
       "image": "",
-      "favorite": true,
+      "favorite": false,
       "createdAt": 1761440000006
     },
     {
