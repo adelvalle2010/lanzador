@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:42:22.231Z",
+  "updated": "2026-11-13T01:42:49.757Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -399,14 +399,14 @@
     },
     {
       "id": "mwebaleabj7j",
-      "createdAt": 1794534141394,
       "name": "Mini curso base de datos",
       "url": "https://mini-curso-base-de-datos.netlify.app/",
       "icon": "",
-      "category": "",
+      "category": "Base de datos",
       "description": "Curso sobre bases de datos y consultas SQL.",
       "image": "",
-      "favorite": true
+      "favorite": true,
+      "createdAt": 1794534141394
     }
   ]
 }
