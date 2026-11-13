@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:40:14.692Z",
+  "updated": "2026-11-13T01:40:36.944Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -355,14 +355,25 @@
     },
     {
       "id": "mweb7v2lvz2u",
-      "createdAt": 1794534013965,
       "name": "Operaciones Elementales JSP y SQL",
       "url": "https://guia-de-la-unidad.netlify.app/#clase4",
       "icon": "",
       "category": "Java Web",
       "description": "Guía paso a paso sobre bases de datos y consultas SQL.",
       "image": "",
-      "favorite": true
+      "favorite": true,
+      "createdAt": 1794534013965
+    },
+    {
+      "id": "mweb8cgktyrc",
+      "createdAt": 1794534036500,
+      "name": "Escrito jsp v2",
+      "url": "https://escrito-jsp-v2.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Recurso sobre páginas JSP en Java Web.",
+      "image": "",
+      "favorite": false
     }
   ]
 }
