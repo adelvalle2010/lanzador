@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:44:14.565Z",
+  "updated": "2026-11-13T01:44:36.131Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -432,12 +432,23 @@
     },
     {
       "id": "mwebd0cva5yo",
-      "createdAt": 1794534254095,
       "name": "Viaje de peticiones",
       "url": "https://viaje-de-peticiones.netlify.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Recurso de programación en Java.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534254095
+    },
+    {
+      "id": "mwebdgzwprmy",
+      "createdAt": 1794534275660,
+      "name": "Servlets metodos http",
+      "url": "https://servlets-metodos-http.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Recurso sobre Servlets en Java Web: peticiones, respuestas y ciclo de vida.",
       "image": "",
       "favorite": false
     }
