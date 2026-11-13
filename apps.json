@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:41:47.040Z",
+  "updated": "2026-11-13T01:42:22.231Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -388,12 +388,23 @@
     },
     {
       "id": "mweb9uihg8f6",
-      "createdAt": 1794534106553,
       "name": "Emulador consulta db",
       "url": "https://emulador-consulta-db.netlify.app/simulacion_dao_y_jdbc.html",
       "icon": "",
       "category": "",
       "description": "Simulador interactivo sobre el patrón DAO y el acceso a datos con JDBC.",
+      "image": "",
+      "favorite": true,
+      "createdAt": 1794534106553
+    },
+    {
+      "id": "mwebaleabj7j",
+      "createdAt": 1794534141394,
+      "name": "Mini curso base de datos",
+      "url": "https://mini-curso-base-de-datos.netlify.app/",
+      "icon": "",
+      "category": "",
+      "description": "Curso sobre bases de datos y consultas SQL.",
       "image": "",
       "favorite": true
     }
