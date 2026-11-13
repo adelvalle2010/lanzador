@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:48:37.032Z",
+  "updated": "2026-11-13T01:49:41.395Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -498,14 +498,25 @@
     },
     {
       "id": "mwebimnajd8j",
-      "createdAt": 1794534516262,
       "name": "Content 1 seven",
       "url": "https://content-1-seven.vercel.app/",
       "icon": "",
       "category": "TO Diseño Web",
       "description": "Recurso de TO Diseño Web: Content 1 seven.",
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "createdAt": 1794534516262
+    },
+    {
+      "id": "mwebk09bz05b",
+      "createdAt": 1794534580559,
+      "name": "Mi Cuaderno De Recursos",
+      "url": "https://adelvalle2010.github.io/miCuadernoDeRecursos/",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Curso de Herramientas: Mi Cuaderno De Recursos.",
+      "image": "",
+      "favorite": true
     }
   ]
 }
