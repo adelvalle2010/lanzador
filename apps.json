@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:43:50.884Z",
+  "updated": "2026-11-13T01:44:14.565Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -421,12 +421,23 @@
     },
     {
       "id": "mwebci2qj986",
-      "createdAt": 1794534230402,
       "name": "Doget dopost",
       "url": "https://doget-dopost.netlify.app/",
       "icon": "",
       "category": "Java Web",
       "description": "Recurso sobre los métodos doGet y doPost de un Servlet.",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794534230402
+    },
+    {
+      "id": "mwebd0cva5yo",
+      "createdAt": 1794534254095,
+      "name": "Viaje de peticiones",
+      "url": "https://viaje-de-peticiones.netlify.app/",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Recurso de programación en Java.",
       "image": "",
       "favorite": false
     }
