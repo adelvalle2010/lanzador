@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:34:05.475Z",
+  "updated": "2026-11-13T01:34:25.993Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -174,7 +174,7 @@
       "category": "Ajedrez",
       "description": "Curso de ajedrez de básico a avanzado, con videos y banco de ejercicios.",
       "image": "",
-      "favorite": true,
+      "favorite": false,
       "createdAt": 1761440000003
     },
     {
