@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:49:41.395Z",
+  "updated": "2026-11-13T01:50:56.477Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -509,12 +509,23 @@
     },
     {
       "id": "mwebk09bz05b",
-      "createdAt": 1794534580559,
       "name": "Mi Cuaderno De Recursos",
       "url": "https://adelvalle2010.github.io/miCuadernoDeRecursos/",
       "icon": "",
       "category": "Herramientas",
       "description": "Curso de Herramientas: Mi Cuaderno De Recursos.",
+      "image": "",
+      "favorite": true,
+      "createdAt": 1794534580559
+    },
+    {
+      "id": "mweblm9w3a2u",
+      "createdAt": 1794534655749,
+      "name": "Material programacion avanzada libr",
+      "url": "https://material-programacion-avanzada-libr.vercel.app/",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Herramienta de Herramientas: Material programacion avanzada libr.",
       "image": "",
       "favorite": true
     }
