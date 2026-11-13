@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:57:50.236Z",
+  "updated": "2026-11-13T01:58:55.135Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -542,12 +542,23 @@
     },
     {
       "id": "mwebuhe2mage",
-      "createdAt": 1794535069322,
       "name": "Github - lector de apoyo.",
       "url": "https://github.com/adelvalle2010/Lector-de-apoyo",
       "icon": "",
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: Github - lector de apoyo..",
+      "image": "",
+      "favorite": false,
+      "createdAt": 1794535069322
+    },
+    {
+      "id": "mwebvvi24228",
+      "createdAt": 1794535134266,
+      "name": "Diseño de Base de Datos.",
+      "url": "https://github.com/adelvalle2010/curso-disenio-base-de-datos",
+      "icon": "",
+      "category": "Base de datos",
+      "description": "Curso sobre bases de datos y consultas SQL.",
       "image": "",
       "favorite": false
     }
