@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T01:39:08.248Z",
+  "updated": "2026-11-13T01:40:14.692Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -344,12 +344,23 @@
     },
     {
       "id": "mweb6g0ijtm2",
-      "createdAt": 1794533947794,
       "name": "UáipoNem 2.6.0 — Extensión para Firefox, Edge y Chrome | JML Software",
       "url": "https://jmlsoftware.com.uy/uaiponem/#funciones",
       "icon": "",
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: UáipoNem 2.6.0 — Extensión para Firefox, Edge y Chrome | JML Software.",
+      "image": "",
+      "favorite": true,
+      "createdAt": 1794533947794
+    },
+    {
+      "id": "mweb7v2lvz2u",
+      "createdAt": 1794534013965,
+      "name": "Operaciones Elementales JSP y SQL",
+      "url": "https://guia-de-la-unidad.netlify.app/#clase4",
+      "icon": "",
+      "category": "Java Web",
+      "description": "Guía paso a paso sobre bases de datos y consultas SQL.",
       "image": "",
       "favorite": true
     }
