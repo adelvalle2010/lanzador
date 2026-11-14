@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-13T02:16:01.821Z",
+  "updated": "2026-11-14T02:29:15.109Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -572,6 +572,17 @@
       "image": "",
       "favorite": true,
       "createdAt": 1794536003673
+    },
+    {
+      "id": "mwfseqnsquft",
+      "createdAt": 1794623354488,
+      "name": "Sign in - Google Accounts",
+      "url": "https://aistudio.google.com/apps/70e31bbe-71c9-4229-a715-36c133562aae?showAssistant=true&showPreview=true&fullscreenApplet=true",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Herramienta de Herramientas: Sign in - Google Accounts.",
+      "image": "",
+      "favorite": false
     }
   ]
 }
