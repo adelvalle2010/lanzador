@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-14T02:29:15.109Z",
+  "updated": "2026-11-14T02:30:43.851Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -519,17 +519,6 @@
       "createdAt": 1794534580559
     },
     {
-      "id": "mweblm9w3a2u",
-      "name": "Libreta de Clase",
-      "url": "https://material-programacion-avanzada-libr.vercel.app/",
-      "icon": "",
-      "category": "Herramientas",
-      "description": "Herramienta de Herramientas: Material programacion avanzada libr.",
-      "image": "",
-      "favorite": false,
-      "createdAt": 1794534655749
-    },
-    {
       "id": "mwebs3cq2jo5",
       "name": "Curso htm , css , js , jstl",
       "url": "https://curso-htm-ly-mas-xi.vercel.app/",
@@ -575,14 +564,14 @@
     },
     {
       "id": "mwfseqnsquft",
-      "createdAt": 1794623354488,
       "name": "Sign in - Google Accounts",
       "url": "https://aistudio.google.com/apps/70e31bbe-71c9-4229-a715-36c133562aae?showAssistant=true&showPreview=true&fullscreenApplet=true",
       "icon": "",
       "category": "Herramientas",
       "description": "Herramienta de Herramientas: Sign in - Google Accounts.",
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "createdAt": 1794623354488
     }
   ]
 }
