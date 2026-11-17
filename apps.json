@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-11-14T02:30:43.851Z",
+  "updated": "2026-11-17T00:14:16.262Z",
   "categories": {
     "Java Web": {
       "color": 1,
@@ -572,6 +572,17 @@
       "image": "",
       "favorite": false,
       "createdAt": 1794623354488
+    },
+    {
+      "id": "mwjxwpp40l5v",
+      "createdAt": 1794874455832,
+      "name": "Mi Cuaderno de Recursos V2",
+      "url": "https://micuadernoderecursos-nuevo.profe-eliza17.workers.dev/?c=adelvalle",
+      "icon": "",
+      "category": "Herramientas",
+      "description": "Curso de Herramientas: Mi Cuaderno de Recursos V2.",
+      "image": "",
+      "favorite": true
     }
   ]
 }
